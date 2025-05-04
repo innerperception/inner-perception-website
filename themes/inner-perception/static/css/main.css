@@ -408,6 +408,182 @@ section:last-of-type {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
 }
 
+/* Music Section */
+.music {
+  padding: 100px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+}
+
+/* Music section background */
+.music::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/backgrounds/music-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.music-content {
+  position: relative;
+  z-index: 1;
+}
+
+.music-player-wrapper {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Video Section */
+.video {
+  padding: 80px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+}
+
+/* Video section background */
+.video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/backgrounds/video-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.video-content {
+  margin-top: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.video-description {
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Live Shows Section */
+.shows {
+  padding: 80px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+}
+
+/* Live shows section background */
+.shows::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/backgrounds/live-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.shows-list {
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Show Items */
+.show-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+}
+
+/* Contact section background */
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/backgrounds/contact-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.contact-info {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+}
+
 /* Live Shows Section */
 #shows ul {
   list-style: none;
@@ -1055,3 +1231,65 @@ section:last-of-type {
 }
 
 /* --- End Plyr Styles --- */
+
+/* Additional Show Styles */
+#shows ul {
+  list-style: none;
+  padding: 0;
+}
+
+#shows li {
+  background-color: var(--secondary-color); /* Use variable */
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#shows li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.show-date {
+  font-weight: 700;
+  flex: 0 0 120px;
+  color: var(--text-color);
+}
+
+.show-venue {
+  flex-grow: 1;
+  margin: 0 20px;
+  color: var(--text-color);
+}
+
+.show-location {
+  font-style: italic;
+  color: var(--text-color);
+  flex: 0 0 150px;
+  text-align: right;
+}
+
+.show-link a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.show-link a:hover {
+  background-color: var(--text-color);
+  color: var(--dark-bg);
+  transform: scale(1.05);
+}
