@@ -747,30 +747,29 @@ section:last-of-type {
   display: flex;
   max-width: 450px;
   margin: 0 auto;
+  gap: 10px; /* Added gap between input and button */
 }
 
 .subscribe-form input[type="email"] {
   flex: 1;
-  padding: 12px;
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  border-radius: 4px 0 0 4px;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
   color: var(--text-color);
-  font-size: 1rem;
-  font-family: var(--body-font);
+  border-radius: var(--border-radius);
+  font-size: 1.1rem; /* Increased from default size to match button */
 }
 
 .subscribe-form button {
-  padding: 0 20px;
   background-color: var(--primary-color);
-  color: var(--dark-bg);
+  color: var(--text-color);
   border: none;
-  border-radius: 0 4px 4px 0;
-  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: var(--header-font);
-  letter-spacing: 0.5px;
+  font-size: 1.1rem; /* Increased from default size for better readability */
+  font-weight: 600; /* Added to make text more prominent */
 }
 
 .subscribe-form button:hover {
