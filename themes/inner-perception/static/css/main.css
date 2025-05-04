@@ -77,7 +77,7 @@ p {
   color: var(--text-color); /* Use text color for paragraphs */
   font-family: var(--body-font);
   line-height: 1.8; /* Increased line height for better readability with serif fonts */
-  font-size: 1.05rem; /* Slightly larger for better readability */
+  font-size: 1.15rem; /* Increased from 1.05rem for better readability */
 }
 
 a {
@@ -403,7 +403,7 @@ section:last-of-type {
 
 .about-text p {
   margin-bottom: 20px;
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Increased from 1.1rem for better readability */
   line-height: 1.8;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
 }
@@ -482,6 +482,7 @@ section:last-of-type {
   margin-left: auto;
   margin-right: auto;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+  font-size: 1.2rem; /* Added increased font size for better readability */
 }
 
 .video-container {
@@ -582,6 +583,7 @@ section:last-of-type {
 .contact-info p {
   margin-bottom: 15px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+  font-size: 1.2rem; /* Added increased font size for better readability */
 }
 
 /* Live Shows Section */
