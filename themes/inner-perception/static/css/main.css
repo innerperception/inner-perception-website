@@ -1,10 +1,10 @@
 /* Base Styles */
 :root {
-  --primary-color: #e8a87c; /* Subtle orange accent color */
+  --primary-color: #704214; /* Sepia color replacing orange */
   --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
   --dark-bg: #000000; /* Black - From image palette */
   --text-color: #FFFFFF; /* Changed to pure white for better visibility */
-  --header-color: #e8a87c; /* Changed to subtle orange for headings */
+  --header-color: #704214; /* Sepia color for headings */
   --header-font: 'Playfair Display', serif; /* Elegant serif font for headings */
   --body-font: 'Lora', serif; /* Readable serif font for body text */
   --border-radius: 4px;
@@ -88,7 +88,7 @@ a {
 }
 
 a:hover {
-  color: #f0bc94; /* Lighter orange on hover */
+  color: #9c6b3c; /* Lighter sepia on hover */
 }
 
 /* Header - Now acts as Fixed Nav Bar */
@@ -641,8 +641,8 @@ section:last-of-type {
 }
 
 .show-link a:hover {
-  background-color: var(--text-color);
-  color: var(--dark-bg);
+  background-color: #9c6b3c; /* Lighter sepia on hover */
+  color: var(--text-color);
   transform: scale(1.05);
 }
 
@@ -772,7 +772,8 @@ section:last-of-type {
 }
 
 .subscribe-form button:hover {
-  background-color: #f0bc94; /* Lighter orange on hover */
+  background-color: #9c6b3c; /* Lighter sepia on hover */
+  color: var(--text-color);
 }
 
 /* Success message styling */
@@ -829,9 +830,10 @@ section:last-of-type {
 }
 
 .btn:hover {
-  background-color: #f0bc94; /* Lighter orange on hover */
-  color: var(--dark-bg);
+  background-color: #9c6b3c; /* Lighter sepia on hover */
+  color: var(--text-color);
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
@@ -1130,7 +1132,9 @@ section:last-of-type {
 }
 
 .album-info a:hover {
-  background-color: var(--text-color);
+  background-color: #9c6b3c; /* Lighter sepia on hover */
+  color: var(--text-color);
+  transform: translateY(-2px);
 }
 
 /* --- Plyr Player & Playlist Styles --- */
@@ -1289,7 +1293,7 @@ section:last-of-type {
 }
 
 .show-link a:hover {
-  background-color: var(--text-color);
-  color: var(--dark-bg);
+  background-color: #9c6b3c; /* Lighter sepia on hover */
+  color: var(--text-color);
   transform: scale(1.05);
 }

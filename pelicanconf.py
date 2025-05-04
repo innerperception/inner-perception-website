@@ -42,7 +42,7 @@ ALBUMS_DATA = ALBUMS
 YOUTUBE = YOUTUBE_VIDEO
 
 # Music files
-MUSIC_FILES = ['01_Mindscapes.mp3', '02_Echoes_of_Silence.mp3', '03_Beneath_the_Surface.mp3']
+MUSIC_FILES = ['01_Mindscapes.mp3', '02_Forever.mp3', '03_Set_Me_Free.mp3']
 
 # Static paths
 STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
