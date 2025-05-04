@@ -3,7 +3,7 @@
   --primary-color: #704214; /* Sepia color replacing orange */
   --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
   --dark-bg: #000000; /* Black - From image palette */
-  --text-color: #FFFFFF; /* Changed to pure white for better visibility */
+  --text-color: #f5f0e6; /* Light sepia tint instead of pure white */
   --header-color: #704214; /* Sepia color for headings */
   --header-font: 'Playfair Display', serif; /* Elegant serif font for headings */
   --body-font: 'Lora', serif; /* Readable serif font for body text */
