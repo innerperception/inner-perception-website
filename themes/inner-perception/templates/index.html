@@ -16,6 +16,25 @@
   </div>
 </section>
 
+<!-- YouTube Video -->
+{% if YOUTUBE.enabled and YOUTUBE.url %}
+<section id="video" class="video">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ YOUTUBE.title }}</h2>
+    </div>
+    <div class="video-content">
+      <div class="video-description">
+        <p>{{ YOUTUBE.description }}</p>
+      </div>
+      <div class="video-container">
+        <iframe width="100%" height="450" src="{{ YOUTUBE.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <section id="about" class="about">
   <div class="container">
     <div class="section-header">
@@ -26,8 +45,10 @@
         <img src="{{ SITEURL }}/theme/images/band.jpg" alt="Inner Perception Band">
       </div>
       <div class="about-text">
-        <p>Formed in 2023, Inner Perception brings a fresh voice to the music scene. With their intense energy and unique blend of post-hardcore with melodic hardcore influences, Inner Perception create soundscapes that are both powerful and memorable. The band's music is characterized by dynamic arrangements and soulful melodies, resulting in tracks that leave a lasting impression on listeners.</p>
-        <!-- <p>The band consists of Martin (guitars,vocals), Honza (guitar), George (bass). Together, we create music that explores themes of personal growth, and the human experience.</p> -->
+        <p>{{ ABOUT.main_text }}</p>
+        {% if ABOUT.show_band_members %}
+        <p>{{ ABOUT.band_members }}</p>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -63,36 +84,27 @@
 
     </div> <!-- End music-player-wrapper -->
 
-    <!-- <div class="albums">
+    <!-- 
+    <div class="albums">
+      {% for album in ALBUMS_DATA %}
       <div class="album">
         <div class="album-cover">
-          <img src="{{ SITEURL }}/theme/images/album1.jpg" alt="Beneath the Surface EP">
+          <img src="{{ SITEURL }}/theme/images/{{ album.image }}" alt="{{ album.title }}">
         </div>
         <div class="album-info">
-          <h3 class="album-title">Beneath the Surface</h3>
-          <p class="album-date">Released: March 2023</p>
-          <p class="album-description">Our debut EP explores the depths of human emotion through five powerful tracks that showcase our unique sound and technical abilities.</p>
+          <h3 class="album-title">{{ album.title }}</h3>
+          <p class="album-date">Released: {{ album.release_date }}</p>
+          <p class="album-description">{{ album.description }}</p>
           <div class="album-links">
-            <a href="https://open.spotify.com" target="_blank" class="btn">Spotify</a>
-            <a href="https://music.apple.com" target="_blank" class="btn">Apple Music</a>
+            <a href="{{ album.spotify_url }}" target="_blank" class="btn">Spotify</a>
+            <a href="{{ album.apple_music_url }}" target="_blank" class="btn">Apple Music</a>
           </div>
         </div>
       </div>
-      <div class="album">
-        <div class="album-cover">
-          <img src="{{ SITEURL }}/theme/images/album2.jpg" alt="Shattered Reflections Single">
-        </div>
-        <div class="album-info">
-          <h3 class="album-title">Shattered Reflections</h3>
-          <p class="album-date">Released: October 2023</p>
-          <p class="album-description">Our latest single delves into themes of identity and self-discovery, featuring our most ambitious soundscape to date.</p>
-          <div class="album-links">
-            <a href="https://open.spotify.com" target="_blank" class="btn">Spotify</a>
-            <a href="https://music.apple.com" target="_blank" class="btn">Apple Music</a>
-          </div>
-        </div>
-      </div>
-    </div> -->
+      {% endfor %}
+    </div>
+    -->
+
   </div>
 </section>
 
@@ -102,34 +114,15 @@
       <h2>Live Shows</h2>
     </div>
     <div class="shows-list">
+      {% for show in SHOWS %}
       <div class="show-item">
-        <div class="show-date">May 15, 2025</div>
-        <div class="show-venue">The Echo Lounge, Portland</div>
+        <div class="show-date">{{ show.date }}</div>
+        <div class="show-venue">{{ show.venue }}</div>
         <div class="show-button">
-          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
+          <a href="{{ show.ticket_url }}" target="_blank" class="btn">Tickets</a>
         </div>
       </div>
-      <div class="show-item">
-        <div class="show-date">May 23, 2025</div>
-        <div class="show-venue">Soundwave Arena, Seattle</div>
-        <div class="show-button">
-          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
-        </div>
-      </div>
-      <div class="show-item">
-        <div class="show-date">June 8, 2025</div>
-        <div class="show-venue">Resonance Club, Vancouver</div>
-        <div class="show-button">
-          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
-        </div>
-      </div>
-      <div class="show-item">
-        <div class="show-date">June 17, 2025</div>
-        <div class="show-venue">Harmony Hall, San Francisco</div>
-        <div class="show-button">
-          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -140,11 +133,11 @@
       <h2>Contact</h2>
     </div>
     <div class="contact-info">
-      <p>Get in touch with Inner Perception:</p>
-      <p><strong>Email:</strong> <a href="mailto:info@innerperception.com">info@inner-perception.com</a></p>
-      <p><strong>Booking:</strong> <a href="mailto:booking@innerperception.com">booking@inner-perception.com</a></p>
+      <p>{{ CONTACT.intro }}</p>
+      <p><strong>Email:</strong> <a href="mailto:{{ CONTACT.email }}">{{ CONTACT.email }}</a></p>
+      <p><strong>Booking:</strong> <a href="mailto:{{ CONTACT.booking_email }}">{{ CONTACT.booking_email }}</a></p>
       <div class="mailing-list">
-        <h3>Subscribe to our mailing list</h3>
+        <h3>{{ CONTACT.mailing_list_title }}</h3>
         <form id="subscribe-form" class="subscribe-form" data-mailerlite-form>
           <div class="form-group">
             <input type="email" id="subscribe-email" name="email" placeholder="Your email address" required>
@@ -153,7 +146,7 @@
         </form>
       </div>
       <div class="social-links">
-        <p>Follow us on social media:</p>
+        <p>{{ CONTACT.social_intro }}</p>
         {% if APPLE_MUSIC_URL %}
         <a href="{{ APPLE_MUSIC_URL }}" target="_blank" title="Apple Music"><i class="lni lni-apple-music"></i></a>
         {% endif %}

@@ -28,6 +28,19 @@ YOUTUBE_CHANNEL = 'youtube.com/innerperception'
 BANDCAMP_URL = 'bandcamp.com/innerperception'
 FACEBOOK_USERNAME = 'innerperception'
 
+# Import site content
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'content')))
+from site_content import ABOUT_CONTENT, LIVE_SHOWS, CONTACT_CONTENT, ALBUMS, YOUTUBE_VIDEO
+
+# Make site content available to templates
+ABOUT = ABOUT_CONTENT
+SHOWS = LIVE_SHOWS
+CONTACT = CONTACT_CONTENT
+ALBUMS_DATA = ALBUMS
+YOUTUBE = YOUTUBE_VIDEO
+
 # Music files
 MUSIC_FILES = ['01_Mindscapes.mp3', '02_Echoes_of_Silence.mp3', '03_Beneath_the_Surface.mp3']
 
