@@ -14,29 +14,29 @@ ABOUT_CONTENT = {
 LIVE_SHOWS = [
     {
         'date': 'May 15, 2025',
-        'venue': 'The Echo Lounge, Portland',
-        'ticket_url': 'https://ticketmaster.com'
+        'venue': 'The Echo Lounge, Prague',
+        'ticket_url': 'https://goout.to/innerperception'
     },
     {
-        'date': 'May 23, 2025',
-        'venue': 'Soundwave Arena, Seattle',
-        'ticket_url': 'https://ticketmaster.com'
+        'date': 'June 19, 2025',
+        'venue': 'Some festival, Prague',
+        'ticket_url': 'https://goout.to/innerperception'
     },
     {
-        'date': 'June 8, 2025',
-        'venue': 'Resonance Club, Vancouver',
-        'ticket_url': 'https://ticketmaster.com'
+        'date': 'July 8, 2025',
+        'venue': 'Some festival, Prague',
+        'ticket_url': 'https://goout.to/innerperception'
     },
     {
-        'date': 'June 17, 2025',
-        'venue': 'Harmony Hall, San Francisco',
-        'ticket_url': 'https://ticketmaster.com'
+        'date': 'September 20, 2025',
+        'venue': 'Klubovna, Prague',
+        'ticket_url': 'https://goout.to/innerperception'
     }
 ]
 
 # Contact section content
 CONTACT_CONTENT = {
-    'intro': 'Get in touch with Inner Perception:',
+    'intro': 'Get in touch with us:',
     'email': 'info@inner-perception.com',
     'booking_email': 'booking@inner-perception.com',
     'mailing_list_title': 'Subscribe to our mailing list',
