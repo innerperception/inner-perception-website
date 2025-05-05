@@ -143,11 +143,16 @@
       <p><strong>Booking:</strong> <a href="mailto:{{ CONTACT.booking_email }}">{{ CONTACT.booking_email }}</a></p>
       <div class="mailing-list">
         <h3>{{ CONTACT.mailing_list_title }}</h3>
-        <form id="subscribe-form" class="subscribe-form" data-mailerlite-form>
+        <form id="subscribe-form" class="subscribe-form" name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <p class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
           <div class="form-group">
             <input type="email" id="subscribe-email" name="email" placeholder="Your email address" required>
             <button type="submit">Subscribe</button>
           </div>
+          <div id="form-success" class="form-message success-message">Thanks for subscribing!</div>
+          <div id="form-error" class="form-message error-message">Something went wrong. Please try again.</div>
         </form>
       </div>
       <div class="social-links">

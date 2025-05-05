@@ -12,16 +12,6 @@
   
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-  
-  <!-- MailerLite Universal -->
-  <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1494477');
-  </script>
-  <!-- End MailerLite Universal -->
 </head>
 <body>
   <header class="site-header">
@@ -36,9 +26,9 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#music">Music</a></li>
-          {% if YOUTUBE.enabled and YOUTUBE.url %}
+          <!-- {% if YOUTUBE.enabled and YOUTUBE.url %}
           <li><a href="#video">Video</a></li>
-          {% endif %}
+          {% endif %} -->
           <li><a href="#live">Live</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -88,5 +78,6 @@
 
   <!-- Custom JS -->
   <script src="{{ SITEURL }}/theme/js/main.js"></script>
+  <script src="{{ SITEURL }}/theme/js/subscribe.js"></script>
 </body>
 </html>

@@ -1297,3 +1297,29 @@ section:last-of-type {
   color: var(--text-color);
   transform: scale(1.05);
 }
+
+/* Form messages */
+.form-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  display: none;
+}
+
+.success-message {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+}
+
+.error-message {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #F44336;
+  border: 1px solid #F44336;
+}
+
+/* Hide honeypot field */
+.hidden {
+  display: none;
+}
