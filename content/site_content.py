@@ -65,7 +65,7 @@ ALBUMS = [
 
 # YouTube video section
 YOUTUBE_VIDEO = {
-    'enabled': True,  # Set to False to hide the entire section
+    'enabled': False,  # Set to False to hide the entire section
     'url': 'https://youtu.be/TGIvO4eh190?si=8D60w5LEK4ZrwH4S',  # YouTube embed URL
     'title': 'Latest Music Video',
     'description': 'Check out our latest music video.'
