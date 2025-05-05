@@ -44,11 +44,11 @@ YOUTUBE = YOUTUBE_VIDEO
 # Music files
 MUSIC_FILES = ['01_Mindscapes.mp3', '02_Forever.mp3', '03_Set_Me_Free.mp3']
 
-# Static paths
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
+# Static files
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/CNAME']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/favicon.ico': {'path': 'favicon.ico'}
+    'extra/CNAME': {'path': 'CNAME'},
 }
 
 # URL settings
