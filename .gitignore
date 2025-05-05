@@ -1,0 +1,26 @@
+# Development and build artifacts
+.DS_Store
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.vscode/
+
+# Local development files
+old-site-to-import/
+output/
+
+# Environment
+venv/
+env/
+ENV/
+
+# Media files that might be large
+*.mp3
+*.wav
+*.flac
+*.ogg
+
+# Logs
+*.log
