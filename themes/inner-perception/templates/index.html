@@ -143,10 +143,10 @@
       <p><strong>Booking:</strong> <a href="mailto:{{ CONTACT.booking_email }}">{{ CONTACT.booking_email }}</a></p>
       <div class="mailing-list">
         <h3>{{ CONTACT.mailing_list_title }}</h3>
-        <form id="subscribe-form" class="subscribe-form" action="https://formspree.io/f/yourformid" method="POST">
+        <form id="subscribe-form" class="subscribe-form">
           <div class="form-group">
             <input type="email" id="subscribe-email" name="email" placeholder="Your email address" required>
-            <button type="submit">Subscribe</button>
+            <button type="button" id="subscribe-button">Subscribe</button>
           </div>
           <div id="form-success" class="form-message success-message">Thanks for subscribing!</div>
           <div id="form-error" class="form-message error-message">Something went wrong. Please try again.</div>

@@ -23,15 +23,23 @@ make serve
 
 ### Setting up the Subscription Form
 
-The subscription form uses [Formspree](https://formspree.io/) to handle form submissions. Before deploying to GitHub Pages:
+The subscription form uses [Formbricks](https://formbricks.com/) to handle form submissions. Before deploying to GitHub Pages:
 
-1. Create a free Formspree account at https://formspree.io/
-2. Create a new form and get your form ID (it will look like `xaypdojv`)
-3. Replace `yourformid` in the form action URL in `themes/inner-perception/templates/index.html`:
+1. Create a free Formbricks account at https://formbricks.com/
+2. Create a new environment and get your environment ID
+3. Replace the placeholder environment ID in the base.html template:
 
 ```html
-<form id="subscribe-form" class="subscribe-form" action="https://formspree.io/f/yourformid" method="POST">
+<!-- In themes/inner-perception/templates/base.html -->
+<script type="text/javascript">
+!function(){
+    var appUrl = "https://app.formbricks.com";
+    var environmentId = "clqxcl2ky0003mp08nw4p9xdm"; // Replace with your actual environment ID
+    var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=appUrl+"/js/formbricks.umd.cjs";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e),setTimeout(function(){window.formbricks.setup({environmentId: environmentId, appUrl: appUrl})},500)}();
+</script>
 ```
+
+4. Set up a "newsletter_subscribe" event in your Formbricks dashboard to track subscriptions
 
 ### Deploying to GitHub Pages
 
