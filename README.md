@@ -69,20 +69,20 @@ ABOUT_CONTENT = {
 
 ### Setting up the Subscription Form
 
-The subscription form uses [Formbricks](https://formbricks.com/) to handle form submissions. Before deploying to GitHub Pages:
+The subscription form uses [Airform.io](https://airform.io/) to handle form submissions without any server-side code. The form is already configured to work with your email address.
 
-1. Create a free Formbricks account at https://formbricks.com/
-2. Create a new environment and get your environment ID
-3. Replace the placeholder environment ID in the base.html template:
+How it works:
+1. The form is set up to send submissions to `https://airform.io/your@email.com`
+2. When a visitor submits the form, the data is sent directly to Airform
+3. Airform processes the submission and forwards it to your email address
+4. The visitor sees a success message on your site
 
-```html
-<!-- In themes/inner-perception/templates/base.html -->
-<script type="text/javascript">
-!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://app.formbricks.com/js/formbricks.umd.cjs",t.onload=function(){window.formbricks?window.formbricks.setup({environmentId:"cmaabucu6ffwtyc015rfkc5ic",appUrl:"https://app.formbricks.com"}):console.error("Formbricks library failed to load properly. The formbricks object is not available.");};var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
-</script>
-```
+**Quick Tip:** The `action` attribute defines the location URL where the form's collected data should be sent when it is submitted. The `method` attribute defines which HTTP method to send the data with (should be "post"). All `input`, `select`, `textarea` elements within your form should have a `name` attribute.
 
-4. Set up a "newsletter_subscribe" event in your Formbricks dashboard to track subscriptions
+If you want to use a different email address for form submissions:
+1. Open `themes/inner-perception/templates/index.html`
+2. Find the form with `id="subscribe-form"`
+3. Update the `action` attribute to point to your new email: `action="https://airform.io/your-new-email@example.com"`
 
 ### Deploying to GitHub Pages
 
@@ -113,6 +113,6 @@ To use a custom domain:
 If you encounter issues:
 
 1. Check the console for JavaScript errors
-2. Verify that Formbricks is properly configured
+2. Verify that Airform is properly configured
 3. Ensure all dependencies are installed correctly
 4. For deployment issues, check GitHub Pages settings in your repository

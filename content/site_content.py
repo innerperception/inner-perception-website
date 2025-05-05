@@ -45,14 +45,14 @@ CONTACT_CONTENT = {
 
 # Albums content (currently commented out in the template)
 ALBUMS = [
-    {
-        'title': 'Voyage',
-        'release_date': 'September 2025',
-        'description': 'Our debut EP explores the depths of human emotion through five powerful tracks that showcase our unique sound and technical abilities.',
-        'image': 'album1.jpg',
-        'spotify_url': 'https://open.spotify.com',
-        'apple_music_url': 'https://music.apple.com'
-    }
+    # {
+    #     'title': 'Voyage',
+    #     'release_date': 'September 2025',
+    #     'description': 'Our debut EP explores the depths of human emotion through five powerful tracks that showcase our unique sound and technical abilities.',
+    #     'image': 'album1.jpg',
+    #     'spotify_url': 'https://open.spotify.com',
+    #     'apple_music_url': 'https://music.apple.com'
+    # }
     # {
     #     'title': 'Shattered Reflections',
     #     'release_date': 'October 2023',
