@@ -38,7 +38,7 @@ LIVE_SHOWS = [
 CONTACT_CONTENT = {
     'intro': 'Get in touch with Inner Perception:',
     'email': 'info@inner-perception.com',
-    'booking': 'booking@inner-perception.com',
+    'booking_email': 'booking@inner-perception.com',
     'mailing_list_title': 'Subscribe to our mailing list',
     'social_intro': 'Follow us on social media:'
 }

@@ -506,10 +506,13 @@ section:last-of-type {
 
 /* Live Shows Section */
 .shows {
-  padding: 80px 0;
-  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/backgrounds/live-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 100px 0;
   color: var(--text-color);
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+  position: relative;
 }
 
 /* Live shows section background */
@@ -520,10 +523,6 @@ section:last-of-type {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/backgrounds/live-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   opacity: 0.6; /* Adjust for readability of text */
   z-index: -1;
 }
