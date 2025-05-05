@@ -1,0 +1,1325 @@
+/* Base Styles */
+:root {
+  --primary-color: #8b5a2b; /* Lighter sepia color replacing the darker one */
+  --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
+  --dark-bg: #000000; /* Black - From image palette */
+  --text-color: #f5f0e6; /* Light sepia tint instead of pure white */
+  --header-color: #8b5a2b; /* Lighter sepia color for headings */
+  --header-font: 'Playfair Display', serif; /* Elegant serif font for headings */
+  --body-font: 'Lora', serif; /* Readable serif font for body text */
+  --border-radius: 4px;
+}
+
+/* Import new Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+* {
+  margin: 2px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  line-height: 1.7; /* Increase slightly for readability */
+  font-size: 16px;
+  text-align: center; /* Center align everything */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px; /* Adjusted max-width */
+  margin: 0 auto;
+  padding: 0 15px; /* Slightly less padding */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--header-font);
+  font-weight: 700;
+  margin-bottom: 1.5rem; /* Consistent margin */
+  line-height: 1.3;
+  color: var(--header-color); /* Use new header color */
+  letter-spacing: 0.5px; /* Slightly reduced letter spacing for serif fonts */
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive H1 */
+  font-style: italic; /* Add italic style for more elegance */
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem); /* Responsive H2 */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px; /* Adjust spacing */
+  margin-bottom: 2rem; /* More space below H2 */
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px; /* Fixed width underline */
+  height: 2px; /* Slightly thinner line for serif fonts */
+  background-color: var(--primary-color);
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--text-color); /* Use text color for paragraphs */
+  font-family: var(--body-font);
+  line-height: 1.8; /* Increased line height for better readability with serif fonts */
+  font-size: 1.15rem; /* Increased from 1.05rem for better readability */
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: var(--body-font);
+}
+
+a:hover {
+  color: #b17d4a; /* Adjusted lighter sepia hover color */
+}
+
+/* Header - Now acts as Fixed Nav Bar */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* Auto height based on content */
+  padding: 32px 0; /* Increased padding by 2px */
+  background-color: rgba(0, 0, 0, 0.3); /* More transparent initially */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: padding 0.3s ease, background-color 0.3s ease; /* Add transition */
+}
+
+/* Styles for when the header is scrolled */
+.header-scrolled {
+  padding: 27px 0; /* Increased scrolled padding by 2px */
+  background-color: rgba(0, 0, 0, 0.95); /* More solid when scrolled */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.site-header .container {
+  position: relative; /* Needed for absolute positioning of logo */
+  display: flex;
+  justify-content: space-between; /* Keep nav left, socials right */
+  align-items: center;
+}
+
+.site-header .site-title {
+  /* Logo takes up remaining space and centers */
+  /* flex-grow: 1; */
+  /* text-align: center; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Perfect centering */
+  /* Ensure logo doesn't prevent clicking nav/socials */
+  z-index: -1; /* Place logo behind nav/socials if overlap occurs */ 
+}
+
+.site-header .site-logo {
+  height: 94px; /* Increased logo size (78px * 1.2) */
+  width: auto;
+  vertical-align: middle; /* Align logo nicely */
+  transition: filter 0.3s ease; /* Add transition for smooth darkening */
+}
+
+/* Logo remains at full brightness when scrolled */
+.header-scrolled .site-logo {
+  filter: brightness(100%); /* Logo remains at full brightness */
+}
+
+/* Header Social Links */
+.site-header .social-links {
+  /* Keep social links grouped */
+  display: flex;
+  align-items: center;
+}
+
+.site-header .social-links a {
+  color: var(--text-color);
+  margin-left: 18.75px; /* Increased by 25% from 15px */
+  font-size: 1.8rem; /* Increased by 25% from 1.44rem */
+}
+
+.site-header .social-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Navigation Area */
+.site-nav {
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+.site-nav ul {
+  display: flex;
+  justify-content: flex-start; /* Left-align nav items */
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Reset margin */
+}
+
+.site-nav li {
+  margin: 0 12.5px; /* Increased by 25% from 10px */
+}
+
+.site-nav a {
+  color: var(--text-color);
+  font-weight: 600;
+  position: relative;
+  font-size: 1.19rem; /* Increased by 25% from 0.95rem */
+  font-family: var(--header-font); /* Use header font for navigation */
+  text-transform: none; /* Remove uppercase for serif fonts */
+  letter-spacing: 0.5px; /* Reduced letter spacing for serif fonts */
+}
+
+.site-nav a:after {
+  content: '';
+  position: absolute;
+  bottom: -6.25px; /* Increased by 25% from -5px */
+  left: 0;
+  width: 0;
+  height: 2px; /* Slightly thinner for serif fonts */
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.site-nav a:hover:after {
+  width: 100%;
+}
+
+.site-nav ul li a:hover,
+.site-nav ul li a.active {
+  color: var(--primary-color); /* Navigation links hover in subtle orange */
+}
+
+/* Hero/Splash Screen */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-down:hover {
+  opacity: 1;
+}
+
+.scroll-down a {
+  display: block;
+  width: 30px;
+  height: 50px;
+}
+
+.scroll-arrow {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  border-right: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+  transform: rotate(45deg);
+  animation: scroll-arrow-animation 2s infinite;
+}
+
+@keyframes scroll-arrow-animation {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-10px, -10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+}
+
+/* Main Content Sections */
+.site-content {
+  padding-top: 0; /* No padding needed below hero header */
+}
+
+/* Section Styling */
+section {
+  padding: 80px 0; /* Consistent section padding */
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  color: var(--header-color); /* White section headers */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  font-style: normal; /* Remove italic for section headers */
+  text-transform: none; /* Remove uppercase for serif fonts */
+  letter-spacing: 0.5px; /* Reduced letter spacing for serif fonts */
+}
+
+.section-header h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+/* About Section Layout */
+.about {
+  padding: 100px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+}
+
+/* About section background */
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/backgrounds/about-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  position: relative; /* Ensure content is above the background */
+  z-index: 1;
+}
+
+.about-image {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about-image {
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin-bottom: 0;
+  }
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about-text {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: left;
+  }
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 1.2rem; /* Increased from 1.1rem for better readability */
+  line-height: 1.8;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+}
+
+/* Music Section */
+.music {
+  padding: 100px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+}
+
+/* Music section background */
+.music::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/backgrounds/music-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.music-content {
+  position: relative;
+  z-index: 1;
+}
+
+.music-player-wrapper {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Video Section */
+.video {
+  padding: 80px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+}
+
+/* Video section background */
+.video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/backgrounds/video-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.video-content {
+  margin-top: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.video-description {
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+  font-size: 1.2rem; /* Added increased font size for better readability */
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Live Shows Section */
+.shows {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/backgrounds/live-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 100px 0;
+  color: var(--text-color);
+  position: relative;
+}
+
+/* Live shows section background */
+.shows::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.shows-list {
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Show Items */
+.show-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+}
+
+/* Contact section background */
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/backgrounds/contact-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6; /* Adjust for readability of text */
+  z-index: -1;
+}
+
+.contact-info {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+  font-size: 1.2rem; /* Added increased font size for better readability */
+}
+
+/* Live Shows Section */
+#shows ul {
+  list-style: none;
+  padding: 0;
+}
+
+#shows li {
+  background-color: var(--secondary-color); /* Use variable */
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#shows li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.show-date {
+  font-weight: 700;
+  flex: 0 0 120px;
+  color: var(--text-color);
+}
+
+.show-venue {
+  flex-grow: 1;
+  margin: 0 20px;
+  color: var(--text-color);
+}
+
+.show-location {
+  font-style: italic;
+  color: var(--text-color);
+  flex: 0 0 150px;
+  text-align: right;
+}
+
+.show-link a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.show-link a:hover {
+  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  color: var(--text-color);
+  transform: scale(1.05);
+}
+
+/* Video Section */
+.video {
+  padding: 80px 0;
+  background-color: var(--dark-bg);
+}
+
+.video-content {
+  margin-top: 30px;
+}
+
+.video-description {
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+}
+
+.contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+.contact-info .social-links {
+  margin-top: 30px;
+}
+
+.contact-info .social-links a {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.contact-info .social-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Mailing List Styles */
+.mailing-list {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.mailing-list h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  font-family: var(--header-font);
+  font-style: normal; /* Remove italic */
+}
+
+.subscribe-form .form-group {
+  display: flex;
+  max-width: 450px;
+  margin: 0 auto;
+  gap: 10px; /* Added gap between input and button */
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  font-size: 1.1rem; /* Increased from default size to match button */
+}
+
+.subscribe-form button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem; /* Increased from default size for better readability */
+  font-weight: 600; /* Added to make text more prominent */
+}
+
+.subscribe-form button:hover {
+  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  color: var(--text-color);
+}
+
+/* Success message styling */
+.success-message {
+  padding: 15px;
+  background-color: rgba(46, 204, 113, 0.1);
+  border-left: 4px solid #2ecc71;
+  border-radius: 4px;
+  margin: 20px 0;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-message p {
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--body-font);
+}
+
+.success-message strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.submitted {
+  animation: submitPulse 0.5s ease-in-out;
+}
+
+@keyframes submitPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--header-font);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: none; /* Remove uppercase for serif fonts */
+  letter-spacing: 0.5px; /* Reduced letter spacing for serif fonts */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--secondary-color);
+  padding: 30px 0; /* Reduced padding */
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+/* Responsive Styles */
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none; /* Always hidden now */
+}
+
+/* Tablet and smaller screens */
+@media screen and (max-width: 768px) {
+  /* General adjustments */
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+  }
+  
+  /* Header adjustments - make header static on mobile */
+  .site-header {
+    position: absolute; /* Position absolute to overlay on hero */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Transparent background */
+    box-shadow: none; /* Remove shadow */
+    padding: 20px 0;
+    z-index: 10; /* Higher z-index to appear above hero */
+  }
+  
+  .header-scrolled {
+    background-color: transparent; /* Keep transparent even when scrolled */
+    padding: 15px 0;
+  }
+  
+  /* Center logo and hide navigation */
+  .site-header .container {
+    justify-content: center;
+  }
+  
+  .site-header .site-title {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    z-index: 10;
+    margin: 0 auto;
+  }
+  
+  .site-header .site-logo {
+    height: 110px; /* Larger logo */
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Add shadow for visibility */
+  }
+  
+  /* Hide navigation and social links in header on mobile */
+  .site-nav, 
+  .site-header .social-links {
+    display: none;
+  }
+  
+  /* Mobile menu toggle hidden */
+  .mobile-menu-toggle {
+    display: none;
+  }
+  
+  /* Remove body padding since header is now absolute */
+  body {
+    padding-top: 0;
+  }
+  
+  /* Adjust hero section to accommodate the header */
+  .hero {
+    padding-top: 0;
+  }
+  
+  .site-nav {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .site-nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .site-nav li {
+    margin: 0 8px;
+  }
+  
+  .site-nav a {
+    font-size: 0.9rem;
+    padding: 5px 3px;
+  }
+  
+  /* About section */
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-image, .about-text {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .about-image {
+    margin-bottom: 20px;
+  }
+  
+  /* Music section */
+  .music-player-wrapper {
+    padding: 15px;
+  }
+  
+  .playlist-item {
+    padding: 10px;
+  }
+  
+  /* Shows section */
+  .show-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .show-date, .show-info, .show-action {
+    width: 100%;
+    padding: 5px 0;
+  }
+  
+  .show-date {
+    margin-bottom: 10px;
+  }
+  
+  .show-action {
+    margin-top: 10px;
+  }
+  
+  /* Contact section */
+  .contact-info p {
+    font-size: 1rem;
+  }
+  
+  .mailing-list {
+    padding: 15px;
+  }
+  
+  .subscribe-form .form-group {
+    flex-direction: column;
+  }
+  
+  .subscribe-form input[type="email"] {
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .subscribe-form button {
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .contact-info .social-links a {
+    margin: 0 10px;
+  }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+  /* Even smaller screens */
+  .site-header {
+    padding: 15px 0;
+  }
+  
+  .site-header .container {
+    justify-content: center;
+  }
+  
+  .site-header .site-title {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .site-header .site-logo {
+    height: 110px; /* Significantly larger logo on mobile */
+    width: auto;
+  }
+  
+  /* Hero adjustments */
+  .hero {
+    height: 80vh;
+  }
+  
+  /* Section headers */
+  .section-header {
+    margin-bottom: 25px;
+  }
+  
+  h2:after {
+    width: 40px;
+  }
+}
+
+/* Section Specific Styles */
+
+/* About Section */
+#about img {
+  max-width: 100%; /* Ensure it doesn't overflow container width initially */
+  height: auto;
+  display: block; /* Needed for margin auto centering */
+  margin: 20px auto; /* Add some space around the image */
+  border-radius: var(--border-radius);
+  transform: scale(1.2); /* Make image 20% larger */
+  transition: transform 0.3s ease; /* Smooth transition if needed later */
+}
+
+/* Music Section */
+#music .album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.album-cover {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.album-info {
+  padding: 20px;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.album-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.album-info p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.album-info a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.album-info a:hover {
+  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+/* --- Plyr Player & Playlist Styles --- */
+
+/* New wrapper style */
+.music-player-wrapper {
+  max-width: 700px; /* Or adjust as needed */
+  margin: 40px auto 0; /* Center the wrapper */
+  background-color: rgba(0,0,0, 0.1); /* Slightly darker background to group */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for the player itself if extra spacing is needed */
+.plyr-container {
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+/* Style the main audio player (Plyr enhances this) */
+#player {
+  width: 100%; /* Make player responsive */
+}
+
+/* Container for the playlist below the player */
+.playlist-container {
+  margin-top: 15px; /* Slightly reduce margin */
+  text-align: left; /* Align playlist text left */
+  max-height: 300px; /* Limit height and allow scroll */
+  overflow-y: auto; /* Add scrollbar if playlist is long */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator line */
+  padding-top: 15px; /* Space above playlist */
+  padding-bottom: 5px; /* Add some padding at the bottom */
+}
+
+/* The playlist list */
+.playlist {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Remove auto margin */
+  max-width: none; /* Remove max-width as wrapper controls it */
+}
+
+/* Individual playlist item */
+.playlist-item {
+  margin-bottom: 8px;
+}
+
+/* Style the button within each list item */
+.playlist-item button {
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+  background-color: var(--secondary-color); /* Match section background */
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius); /* Use existing border radius */
+  text-align: left;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.playlist-item button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Style for the currently active/playing track */
+.playlist-item.active button {
+  background-color: var(--primary-color);
+  color: var(--dark-bg); 
+  border-color: var(--primary-color);
+  font-weight: 600;
+}
+
+.playlist-item .track-title {
+  font-weight: 700;
+  font-family: var(--header-font);
+  font-style: normal;
+}
+
+.playlist-item .track-artist {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-family: var(--body-font);
+}
+
+/* Apply theme color to Plyr */
+.music-player-wrapper .plyr {
+  --plyr-color-main: var(--primary-color); 
+  --plyr-control-radius: var(--border-radius); /* Match site border radius */
+  --plyr-audio-controls-background: transparent; /* Cleaner look */
+  --plyr-audio-control-color: var(--text-color);
+  --plyr-audio-control-color-hover: var(--primary-color);
+}
+
+/* --- End Plyr Styles --- */
+
+/* Additional Show Styles */
+#shows ul {
+  list-style: none;
+  padding: 0;
+}
+
+#shows li {
+  background-color: var(--secondary-color); /* Use variable */
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#shows li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.show-date {
+  font-weight: 700;
+  flex: 0 0 120px;
+  color: var(--text-color);
+}
+
+.show-venue {
+  flex-grow: 1;
+  margin: 0 20px;
+  color: var(--text-color);
+}
+
+.show-location {
+  font-style: italic;
+  color: var(--text-color);
+  flex: 0 0 150px;
+  text-align: right;
+}
+
+.show-link a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.show-link a:hover {
+  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  color: var(--text-color);
+  transform: scale(1.05);
+}
+
+/* Form messages */
+.form-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  display: none;
+}
+
+.success-message {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+}
+
+.error-message {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #F44336;
+  border: 1px solid #F44336;
+}
+
+/* Hide honeypot field */
+.hidden {
+  display: none;
+}

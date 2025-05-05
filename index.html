@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Inner Perception</title>
+  <meta name="description" content="Inner Perception is a post-hardcore band delivering intense, emotional music that pushes boundaries and explores the depths of human experience.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://inner-perception.com/theme/css/main.css">
+  <link rel="stylesheet" href="https://inner-perception.com/theme/lineicons/css/icons.css">
+  
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  
+  <!-- START Formbricks Surveys -->
+  <script type="text/javascript">
+  !function(){
+      var appUrl = "https://app.formbricks.com";
+      var environmentId = "clqxcl2ky0003mp08nw4p9xdm"; // Replace with your actual environment ID
+      var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=appUrl+"/js/formbricks.umd.cjs";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e),setTimeout(function(){window.formbricks.setup({environmentId: environmentId, appUrl: appUrl})},500)}();
+  </script>
+  <!-- END Formbricks Surveys -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#music">Music</a></li>
+          <!--           <li><a href="#video">Video</a></li>
+ -->
+          <li><a href="#live">Live</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-title">
+        <a href="#hero" id="logo-link">
+          <img src="https://inner-perception.com/theme/images/inner-perception-alpha.png" alt="Inner Perception" class="site-logo">
+        </a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://apple.com/" target="_blank" title="Apple Music"><i class="lni lni-apple-music"></i></a>
+        <a href="https://open.spotify.com/artist/innerperception" target="_blank" title="Spotify"><i class="lni lni-spotify"></i></a>
+        <a href="youtube.com/innerperception" target="_blank" title="YouTube"><i class="lni lni-youtube"></i></a>
+        <a href="bandcamp.com/innerperception" target="_blank" title="Bandcamp"><i class="lni lni-music"></i></a>
+        <a href="https://instagram.com/innerperception" target="_blank" title="Instagram"><i class="lni lni-instagram"></i></a>
+        <a href="https://facebook.com/innerperception" target="_blank" title="Facebook"><i class="lni lni-facebook"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-content">
+<section id="hero" class="hero">
+  <div class="video-background">
+    <video autoplay loop muted playsinline>
+      <source src="https://inner-perception.com/theme/images/ip_moth_web.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-content">
+    <div class="scroll-down">
+      <a href="#about">
+        <span class="scroll-arrow"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- YouTube Video -->
+<section id="video" class="video">
+  <div class="container">
+    <div class="section-header">
+      <h2>Latest Music Video</h2>
+    </div>
+    <div class="video-content">
+      <div class="video-description">
+        <p>Check out our latest music video.</p>
+      </div>
+      <div class="video-container">
+        <iframe width="100%" height="450" src="https://youtu.be/TGIvO4eh190?si=8D60w5LEK4ZrwH4S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>About</h2>
+    </div>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="https://inner-perception.com/theme/images/band.jpg" alt="Inner Perception Band">
+      </div>
+      <div class="about-text">
+        <p>Formed in 2023, Inner Perception brings a fresh voice to the music scene. With their intense energy and unique blend of post-hardcore with melodic hardcore influences, Inner Perception create soundscapes that are both powerful and memorable. The band's music is characterized by dynamic arrangements and soulful melodies, resulting in tracks that leave a lasting impression on listeners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Music Section -->
+<section id="music" class="music">
+  <div class="container">
+    <div class="section-header">
+      <h2>Music</h2>
+    </div>
+
+    <!-- Wrapper for Player and Playlist -->
+    <div class="music-player-wrapper">
+
+      <!-- Plyr Player -->
+      <div class="plyr-container">
+        <audio id="player" controls crossorigin playsinline>
+          <!-- Initial source will be set by JS, or you can set a default -->
+          <!-- <source src="https://inner-perception.com/theme/music/01_Mindscapes.mp3" type="audio/mp3" /> -->
+        </audio>
+      </div>
+
+      <!-- Playlist -->
+      <div class="playlist-container">
+        <ul id="playlist" class="playlist">
+            <li class="playlist-item" data-track-src="https://inner-perception.com/theme/music/01_Mindscapes.mp3">
+              <button type="button">01 Mindscapes</button>
+            </li>
+            <li class="playlist-item" data-track-src="https://inner-perception.com/theme/music/02_Forever.mp3">
+              <button type="button">02 Forever</button>
+            </li>
+            <li class="playlist-item" data-track-src="https://inner-perception.com/theme/music/03_Set_Me_Free.mp3">
+              <button type="button">03 Set Me Free</button>
+            </li>
+        </ul>
+      </div>
+
+    </div> <!-- End music-player-wrapper -->
+
+    <!-- 
+    <div class="albums">
+      <div class="album">
+        <div class="album-cover">
+          <img src="https://inner-perception.com/theme/images/album1.jpg" alt="Voyage">
+        </div>
+        <div class="album-info">
+          <h3 class="album-title">Voyage</h3>
+          <p class="album-date">Released: September 2025</p>
+          <p class="album-description">Our debut EP explores the depths of human emotion through five powerful tracks that showcase our unique sound and technical abilities.</p>
+          <div class="album-links">
+            <a href="https://open.spotify.com" target="_blank" class="btn">Spotify</a>
+            <a href="https://music.apple.com" target="_blank" class="btn">Apple Music</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+
+  </div>
+</section>
+
+<!-- Live Shows Section -->
+  <section id="live" class="shows">
+  <div class="container">
+    <div class="section-header">
+      <h2>Live Shows</h2>
+    </div>
+    <div class="shows-list">
+      <div class="show-item">
+        <div class="show-date">May 15, 2025</div>
+        <div class="show-venue">The Echo Lounge, Portland</div>
+        <div class="show-button">
+          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
+        </div>
+      </div>
+      <div class="show-item">
+        <div class="show-date">May 23, 2025</div>
+        <div class="show-venue">Soundwave Arena, Seattle</div>
+        <div class="show-button">
+          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
+        </div>
+      </div>
+      <div class="show-item">
+        <div class="show-date">June 8, 2025</div>
+        <div class="show-venue">Resonance Club, Vancouver</div>
+        <div class="show-button">
+          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
+        </div>
+      </div>
+      <div class="show-item">
+        <div class="show-date">June 17, 2025</div>
+        <div class="show-venue">Harmony Hall, San Francisco</div>
+        <div class="show-button">
+          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+  <section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-info">
+      <p>Get in touch with Inner Perception:</p>
+      <p><strong>Email:</strong> <a href="mailto:info@inner-perception.com">info@inner-perception.com</a></p>
+      <p><strong>Booking:</strong> <a href="mailto:booking@inner-perception.com">booking@inner-perception.com</a></p>
+      <div class="mailing-list">
+        <h3>Subscribe to our mailing list</h3>
+        <form id="subscribe-form" class="subscribe-form">
+          <div class="form-group">
+            <input type="email" id="subscribe-email" name="email" placeholder="Your email address" required>
+            <button type="button" id="subscribe-button">Subscribe</button>
+          </div>
+          <div id="form-success" class="form-message success-message">Thanks for subscribing!</div>
+          <div id="form-error" class="form-message error-message">Something went wrong. Please try again.</div>
+        </form>
+      </div>
+      <div class="social-links">
+        <p>Follow us on social media:</p>
+        <a href="https://apple.com/" target="_blank" title="Apple Music"><i class="lni lni-apple-music"></i></a>
+        <a href="https://open.spotify.com/artist/innerperception" target="_blank" title="Spotify"><i class="lni lni-spotify"></i></a>
+        <a href="youtube.com/innerperception" target="_blank" title="YouTube"><i class="lni lni-youtube"></i></a>
+        <a href="bandcamp.com/innerperception" target="_blank" title="Bandcamp"><i class="lni lni-music"></i></a>
+        <a href="https://instagram.com/innerperception" target="_blank" title="Instagram"><i class="lni lni-instagram"></i></a>
+        <a href="https://facebook.com/innerperception" target="_blank" title="Facebook"><i class="lni lni-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Inner Perception. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Plyr JS -->
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+  <!-- Custom JS -->
+  <script src="https://inner-perception.com/theme/js/main.js"></script>
+  <script src="https://inner-perception.com/theme/js/subscribe.js"></script>
+</body>
+</html>
