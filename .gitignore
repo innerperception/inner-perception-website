@@ -23,6 +23,9 @@ var/
 # Pelican
 output/
 cache/
+*.pid
+pelican.log
+srv.pid
 
 # Virtual Environment
 venv/
