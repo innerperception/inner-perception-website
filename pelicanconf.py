@@ -22,10 +22,10 @@ CURRENT_YEAR = '2025'
 
 # Social media links - same as Jekyll site
 INSTAGRAM_USERNAME = 'innerperception'
-APPLE_MUSIC_URL = 'https://apple.com/'
+APPLE_MUSIC_URL = 'https://music.apple.com/artist/innerperception'
 SPOTIFY_ARTIST_ID = 'innerperception'
-YOUTUBE_CHANNEL = 'youtube.com/innerperception'
-BANDCAMP_URL = 'bandcamp.com/innerperception'
+YOUTUBE_CHANNEL = 'https://www.youtube.com/@innerperception'
+BANDCAMP_URL = 'https://innerperception.bandcamp.com'
 FACEBOOK_USERNAME = 'innerperception'
 
 # Import site content
