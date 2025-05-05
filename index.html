@@ -12,12 +12,6 @@
   
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-  
-  <!-- START Formbricks Surveys -->
-  <script type="text/javascript">
-  !function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://app.formbricks.com/js/formbricks.umd.cjs",t.onload=function(){window.formbricks?window.formbricks.setup({environmentId:"cmaabucu6ffwtyc015rfkc5ic",appUrl:"https://app.formbricks.com"}):console.error("Formbricks library failed to load properly. The formbricks object is not available.");};var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
-  </script>
-  <!-- END Formbricks Surveys -->
 </head>
 <body>
   <header class="site-header">
@@ -198,13 +192,15 @@
       <p><strong>Booking:</strong> <a href="mailto:booking@inner-perception.com">booking@inner-perception.com</a></p>
       <div class="mailing-list">
         <h3>Subscribe to our mailing list</h3>
-        <form id="subscribe-form" class="subscribe-form">
+        <form id="subscribe-form" class="subscribe-form" method="post" action="https://airform.io/info@inner-perception.com">
           <div class="form-group">
             <input type="email" id="subscribe-email" name="email" placeholder="Your email address" required>
-            <button type="button" id="subscribe-button">Subscribe</button>
+            <button type="submit" id="subscribe-button">Subscribe</button>
+            <input type="hidden" name="subject" value="New Newsletter Subscription">
+            <input type="hidden" name="subscription" value="true">
           </div>
-          <div id="form-success" class="form-message success-message">Thanks for subscribing!</div>
-          <div id="form-error" class="form-message error-message">Something went wrong. Please try again.</div>
+          <div id="form-success" class="form-message success-message" style="display: none;">Thanks for subscribing! We've added <span id="subscribed-email"></span> to our mailing list.</div>
+          <div id="form-error" class="form-message error-message" style="display: none;">Something went wrong. Please try again.</div>
         </form>
       </div>
       <div class="social-links">
