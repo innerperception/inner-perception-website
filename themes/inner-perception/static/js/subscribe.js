@@ -5,26 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (form) {
     form.addEventListener('submit', function(e) {
-      // For Netlify Forms, we don't need to prevent default
-      // as Netlify will handle the submission
+      e.preventDefault(); // Prevent default form submission
 
       // Hide any existing messages
       successMessage.style.display = 'none';
       errorMessage.style.display = 'none';
 
-      // Netlify will handle the form submission and redirect
-      // This code will only run if JavaScript is enabled and
-      // we want to show a custom message instead of redirecting
-
-      // We'll add a hidden field to detect if the form was submitted via AJAX
+      // Get form data
       const formData = new FormData(form);
-      formData.append('ajax-submit', 'true');
-
-      // Submit the form data using fetch
-      fetch('/', {
+      
+      // Submit the form data to Formspree
+      fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       })
       .then(response => {
         if (response.ok) {
@@ -36,10 +32,15 @@ document.addEventListener('DOMContentLoaded', function() {
           }, 5000); // Hide after 5 seconds
         } else {
           // Show error message
-          errorMessage.style.display = 'block';
-          setTimeout(() => {
-            errorMessage.style.display = 'none';
-          }, 5000); // Hide after 5 seconds
+          response.json().then(data => {
+            if (data && data.errors) {
+              console.error('Formspree errors:', data.errors);
+            }
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+              errorMessage.style.display = 'none';
+            }, 5000); // Hide after 5 seconds
+          });
         }
       })
       .catch(error => {
@@ -50,9 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
           errorMessage.style.display = 'none';
         }, 5000); // Hide after 5 seconds
       });
-
-      // Prevent the default form submission
-      e.preventDefault();
     });
   }
 });
