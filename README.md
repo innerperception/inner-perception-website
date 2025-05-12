@@ -98,7 +98,7 @@ This command will:
 - Push the generated site to the gh-pages branch
 - GitHub will automatically deploy the site
 
-The site will be available at https://innerperception.github.io/ or your custom domain if configured.
+The site will be available at https://inner-perception.com/ or https://innerperception.github.io/
 
 ## Custom Domain Setup
 

@@ -21,7 +21,7 @@ THEME = 'themes/inner-perception'
 CURRENT_YEAR = '2025'
 
 # Social media links - same as Jekyll site
-INSTAGRAM_USERNAME = 'innerperception'
+INSTAGRAM_USERNAME = 'inner_perception'
 APPLE_MUSIC_URL = 'https://music.apple.com/artist/innerperception'
 SPOTIFY_ARTIST_ID = 'innerperception'
 YOUTUBE_CHANNEL = 'https://www.youtube.com/@innerperception'

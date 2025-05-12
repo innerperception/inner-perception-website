@@ -1,10 +1,10 @@
 /* Base Styles */
 :root {
-  --primary-color: #8b5a2b; /* Lighter sepia color replacing the darker one */
+  --primary-color: #A7885B; /* Lighter sepia color replacing the darker one */
   --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
   --dark-bg: #000000; /* Black - From image palette */
   --text-color: #f5f0e6; /* Light sepia tint instead of pure white */
-  --header-color: #8b5a2b; /* Lighter sepia color for headings */
+  --header-color: #A7885B; /* Lighter sepia color for headings */
   --header-font: 'Playfair Display', serif; /* Elegant serif font for headings */
   --body-font: 'Lora', serif; /* Readable serif font for body text */
   --border-radius: 4px;
@@ -88,7 +88,7 @@ a {
 }
 
 a:hover {
-  color: #b17d4a; /* Adjusted lighter sepia hover color */
+  color: #ffa45e; /* Adjusted lighter sepia hover color */
 }
 
 /* Header - Now acts as Fixed Nav Bar */
@@ -647,7 +647,7 @@ section:last-of-type {
 }
 
 .show-link a:hover {
-  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  background-color: #bca381; /* Adjusted lighter sepia hover color */
   color: var(--text-color);
   transform: scale(1.05);
 }
@@ -777,7 +777,7 @@ section:last-of-type {
 }
 
 .subscribe-form button:hover {
-  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  background-color: #bca381; /* Adjusted lighter sepia hover color */
   color: var(--text-color);
 }
 
@@ -835,7 +835,7 @@ section:last-of-type {
 }
 
 .btn:hover {
-  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  background-color: #bca381; /* Adjusted lighter sepia hover color */
   color: var(--text-color);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -1137,7 +1137,7 @@ section:last-of-type {
 }
 
 .album-info a:hover {
-  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  background-color: #ffa45e; /* Adjusted lighter sepia hover color */
   color: var(--text-color);
   transform: translateY(-2px);
 }
@@ -1298,7 +1298,7 @@ section:last-of-type {
 }
 
 .show-link a:hover {
-  background-color: #b17d4a; /* Adjusted lighter sepia hover color */
+  background-color: #ffa45e; /* Adjusted lighter sepia hover color */
   color: var(--text-color);
   transform: scale(1.05);
 }
