@@ -13,24 +13,14 @@ ABOUT_CONTENT = {
 # Live shows content
 LIVE_SHOWS = [
     {
-        'date': 'May 15, 2025',
-        'venue': 'The Echo Lounge, Prague',
-        'ticket_url': 'https://goout.to/innerperception'
-    },
-    {
-        'date': 'June 19, 2025',
-        'venue': 'Some festival, Prague',
-        'ticket_url': 'https://goout.to/innerperception'
-    },
-    {
-        'date': 'July 8, 2025',
-        'venue': 'Some festival, Prague',
-        'ticket_url': 'https://goout.to/innerperception'
-    },
-    {
         'date': 'September 20, 2025',
         'venue': 'Klubovna, Prague',
-        'ticket_url': 'https://goout.to/innerperception'
+        'ticket_url': 'https://fb.me/e/6qyLlXQh7'
+    },
+    {
+        'date': 'September 21, 2025',
+        'venue': 'Melodka, Brno',
+        'ticket_url': 'https://fb.me/e/4ZYNMPHro'
     }
 ]
 

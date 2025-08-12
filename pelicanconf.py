@@ -22,8 +22,8 @@ CURRENT_YEAR = '2025'
 
 # Social media links - same as Jekyll site
 INSTAGRAM_USERNAME = 'inner_perception'
-APPLE_MUSIC_URL = 'https://music.apple.com/artist/innerperception'
-SPOTIFY_ARTIST_ID = 'innerperception'
+# APPLE_MUSIC_URL = 'https://music.apple.com/artist/innerperception'
+# SPOTIFY_ARTIST_ID = 'innerperception'
 YOUTUBE_CHANNEL = 'https://www.youtube.com/@innerperception'
 BANDCAMP_URL = 'https://innerperception.bandcamp.com'
 FACEBOOK_USERNAME = 'innerperception'
@@ -42,7 +42,8 @@ ALBUMS_DATA = ALBUMS
 YOUTUBE = YOUTUBE_VIDEO
 
 # Music files
-MUSIC_FILES = ['01_Mindscapes.mp3', '02_Forever.mp3', '03_Set_Me_Free.mp3']
+# MUSIC_FILES = ['01_Mindscapes.mp3', '02_Forever.mp3', '03_Set_Me_Free.mp3']
+MUSIC_FILES = []
 
 # Static files
 STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/CNAME']
