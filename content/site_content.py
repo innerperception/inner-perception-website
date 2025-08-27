@@ -26,6 +26,11 @@ LIVE_SHOWS = [
         'date': 'September 21, 2025',
         'venue': 'Melodka, Brno',
         'ticket_url': 'https://fb.me/e/4ZYNMPHro'
+    },
+    {
+        'date': 'November 20, 2025',
+        'venue': 'Cross Club, Prague',
+        'ticket_url': '#'
     }
 ]
 
@@ -34,7 +39,7 @@ CONTACT_CONTENT = {
     'intro': 'Get in touch with us:',
     'email': 'booking@inner-perception.com',
     # 'booking_email': 'booking@inner-perception.com',
-    'mailing_list_title': 'Subscribe to our mailing list',
+    # 'mailing_list_title': 'Subscribe to our mailing list',
     'social_intro': 'Follow us on social media:'
 }
 
