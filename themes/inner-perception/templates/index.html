@@ -143,15 +143,15 @@
       <p><strong>Booking:</strong> <a href="mailto:{{ CONTACT.booking_email }}">{{ CONTACT.booking_email }}</a></p>
       <div class="mailing-list">
         <h3>{{ CONTACT.mailing_list_title }}</h3>
-        <form id="subscribe-form" class="subscribe-form" method="post" action="https://airform.io/{{ CONTACT.email }}">
+        <form id="subscribe-form" class="subscribe-form" action="https://formspree.io/f/{{ CONTACT.formspree_id }}" method="POST">
           <div class="form-group">
             <input type="email" id="subscribe-email" name="email" placeholder="Your email address" required>
             <button type="submit" id="subscribe-button">Subscribe</button>
-            <input type="hidden" name="subject" value="New Newsletter Subscription">
-            <input type="hidden" name="subscription" value="true">
+            <input type="hidden" name="_subject" value="New Newsletter Subscription">
+            <input type="hidden" name="_next" value="#" />
           </div>
-          <div id="form-success" class="form-message success-message" style="display: none;">Thanks for subscribing! We've added <span id="subscribed-email"></span> to our mailing list.</div>
-          <div id="form-error" class="form-message error-message" style="display: none;">Something went wrong. Please try again.</div>
+          <div id="success"></div>
+          <div id="error"></div>
         </form>
       </div>
       <div class="social-links">
