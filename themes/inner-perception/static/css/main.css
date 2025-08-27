@@ -1,10 +1,10 @@
 /* Base Styles */
 :root {
-  --primary-color: #F6F5F5; /* Blue-gray color */
+  --primary-color: #F0F4F2; /* Blue-gray color */
   --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
   --dark-bg: #3A3E3F; /* Black - From image palette */
   --text-color: var(--primary-color); /* Light sepia tint instead of pure white */
-  --link-color: #C46870; /* Lighter red-orange hover color */
+  --link-color: #F16A1C; /* Lighter red-orange hover color */
   --hover-color: var(--link-color); /* Lighter red-orange hover color */
   --header-color: var(--primary-color); /* Blue-gray color for headings */
   --header-font: 'Playfair Display', serif; /* Elegant serif font for headings */
