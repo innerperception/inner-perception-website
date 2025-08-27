@@ -30,8 +30,7 @@ CONTACT_CONTENT = {
     'email': 'info@inner-perception.com',
     'booking_email': 'booking@inner-perception.com',
     'mailing_list_title': 'Subscribe to our mailing list',
-    'social_intro': 'Follow us on social media:',
-    'formspree_id': 'YOUR_FORMSPREE_FORM_ID'  # You'll need to replace this with your actual Formspree form ID
+    'social_intro': 'Follow us on social media:'
 }
 
 # Albums content (currently commented out in the template)
