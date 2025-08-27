@@ -2,7 +2,7 @@
 :root {
   --primary-color: #F0F4F2; /* Blue-gray color */
   --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
-  --dark-bg: #3A3E3F; /* Black - From image palette */
+  --dark-bg: #000000; /* Black - From image palette */
   --text-color: var(--primary-color); /* Light sepia tint instead of pure white */
   --link-color: #F16A1C; /* Lighter red-orange hover color */
   --hover-color: var(--link-color); /* Lighter red-orange hover color */
