@@ -1,10 +1,12 @@
 /* Base Styles */
 :root {
-  --primary-color: #A7885B; /* Lighter sepia color replacing the darker one */
+  --primary-color: #F6F5F5; /* Blue-gray color */
   --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
-  --dark-bg: #000000; /* Black - From image palette */
-  --text-color: #f5f0e6; /* Light sepia tint instead of pure white */
-  --header-color: #A7885B; /* Lighter sepia color for headings */
+  --dark-bg: #3A3E3F; /* Black - From image palette */
+  --text-color: var(--primary-color); /* Light sepia tint instead of pure white */
+  --link-color: #C46870; /* Lighter red-orange hover color */
+  --hover-color: var(--link-color); /* Lighter red-orange hover color */
+  --header-color: var(--primary-color); /* Blue-gray color for headings */
   --header-font: 'Playfair Display', serif; /* Elegant serif font for headings */
   --body-font: 'Lora', serif; /* Readable serif font for body text */
   --border-radius: 4px;
@@ -88,7 +90,7 @@ a {
 }
 
 a:hover {
-  color: #ffa45e; /* Adjusted lighter sepia hover color */
+  color: var(--primary-color); /* Lighter red-orange hover color */
 }
 
 /* Header - Now acts as Fixed Nav Bar */
@@ -157,7 +159,7 @@ a:hover {
 }
 
 .site-header .social-links a:hover {
-  color: var(--primary-color);
+  color: var(--hover-color);
 }
 
 /* Navigation Area */
@@ -194,7 +196,7 @@ a:hover {
   left: 0;
   width: 0;
   height: 2px; /* Slightly thinner for serif fonts */
-  background-color: var(--primary-color);
+  background-color: var(--hover-color);
   transition: width 0.3s ease;
 }
 
@@ -312,12 +314,13 @@ section:last-of-type {
 }
 
 .section-header h2 {
-  color: var(--header-color); /* White section headers */
+  color: var(--text-color); /* White section headers */
   position: relative;
   display: inline-block;
-  padding-bottom: 10px;
-  font-style: normal; /* Remove italic for section headers */
-  text-transform: none; /* Remove uppercase for serif fonts */
+  font-family: var(--header-font);
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
   letter-spacing: 0.5px; /* Reduced letter spacing for serif fonts */
 }
 
@@ -329,7 +332,7 @@ section:last-of-type {
   transform: translateX(-50%);
   width: 50px;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: var(--hover-color);
 }
 
 /* About Section Layout */
@@ -647,7 +650,7 @@ section:last-of-type {
 }
 
 .show-link a:hover {
-  background-color: #bca381; /* Adjusted lighter sepia hover color */
+  background-color: var(--primary-color); /* Primary color hover */
   color: var(--text-color);
   transform: scale(1.05);
 }
@@ -777,7 +780,7 @@ section:last-of-type {
 }
 
 .subscribe-form button:hover {
-  background-color: #bca381; /* Adjusted lighter sepia hover color */
+  background-color: var(--link-color); /* Lighter red-orange hover color */
   color: var(--text-color);
 }
 
@@ -835,7 +838,7 @@ section:last-of-type {
 }
 
 .btn:hover {
-  background-color: #bca381; /* Adjusted lighter sepia hover color */
+  background-color: var(--link-color); /* Lighter red-orange hover color */
   color: var(--text-color);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -1137,7 +1140,7 @@ section:last-of-type {
 }
 
 .album-info a:hover {
-  background-color: #ffa45e; /* Adjusted lighter sepia hover color */
+  background-color: #E16C2A; /* Lighter red-orange hover color */
   color: var(--text-color);
   transform: translateY(-2px);
 }
@@ -1298,7 +1301,7 @@ section:last-of-type {
 }
 
 .show-link a:hover {
-  background-color: #ffa45e; /* Adjusted lighter sepia hover color */
+  background-color: var(--primary-color); /* Lighter red-orange hover color */
   color: var(--text-color);
   transform: scale(1.05);
 }
@@ -1320,11 +1323,30 @@ section:last-of-type {
 
 .error-message {
   background-color: rgba(244, 67, 54, 0.2);
-  color: #F44336;
-  border: 1px solid #F44336;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 /* Hide honeypot field */
 .hidden {
   display: none;
+}
+
+.eo-form input[type="text"]:not([name="email"]) {
+  display: none !important;
+}
+
+/* Override EmailOctopus button styling */
+.eo-form button,
+.eo-form input[type="submit"],
+.eo-form .eo-submit-btn {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.eo-form button:hover,
+.eo-form input[type="submit"]:hover,
+.eo-form .eo-submit-btn:hover {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
 }
