@@ -24,9 +24,9 @@ CURRENT_YEAR = '2025'
 INSTAGRAM_USERNAME = 'inner_perception'
 # APPLE_MUSIC_URL = 'https://music.apple.com/artist/innerperception'
 # SPOTIFY_ARTIST_ID = 'innerperception'
-YOUTUBE_CHANNEL = 'https://www.youtube.com/@innerperception'
+YOUTUBE_CHANNEL = 'https://www.youtube.com/@InnerPerceptionHC'
 BANDCAMP_URL = 'https://innerperception.bandcamp.com'
-FACEBOOK_USERNAME = 'innerperception'
+FACEBOOK_USERNAME = 'https://www.facebook.com/profile.php?id=61557908352753'
 
 # Import site content
 import sys

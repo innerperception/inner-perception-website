@@ -1,4 +1,4 @@
-Title: About
+Title: About Us
 URL: about.html
 save_as: about.html
 Status: published

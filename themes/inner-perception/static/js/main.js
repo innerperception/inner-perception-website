@@ -96,38 +96,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
       e.preventDefault();
       
-      // Close mobile menu if it's open
-      const mobileNav = document.querySelector('.site-nav');
-      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-      
-      if (mobileNav && mobileNav.classList.contains('active')) {
-        mobileNav.classList.remove('active');
-        if (mobileMenuToggle) {
-          mobileMenuToggle.classList.remove('active');
-        }
-      }
-      
-      // Get the target element
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
       
       if (targetElement) {
-        // For hero/top section, scroll to the very top
-        if (targetId === '#hero') {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          // For other sections, scroll to the element
-          targetElement.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
       }
     });
   });
@@ -277,3 +258,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }); // Log 9
   }
 });
+
+// Scroll to top function for logo
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}

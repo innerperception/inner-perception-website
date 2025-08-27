@@ -6,6 +6,13 @@
   <title>{% if article and article.title %}{{ article.title }} | {% endif %}{% if page and page.title %}{{ page.title }} | {% endif %}{{ SITENAME }}</title>
   <meta name="description" content="{{ SITE_DESCRIPTION }}">
   
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/theme/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ SITEURL }}/theme/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ SITEURL }}/theme/favicons/favicon-16x16.png">
+  <link rel="manifest" href="{{ SITEURL }}/theme/favicons/site.webmanifest">
+  <link rel="shortcut icon" href="{{ SITEURL }}/theme/favicons/favicon.ico">
+  
   <!-- CSS -->
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/lineicons/css/icons.css">
@@ -35,7 +42,7 @@
       </nav>
 
       <div class="site-title">
-        <a href="#hero" id="logo-link">
+        <a href="#" id="logo-link" onclick="scrollToTop(); return false;">
           <img src="{{ SITEURL }}/theme/images/inner-perception-alpha.png" alt="{{ SITENAME }}" class="site-logo">
         </a>
       </div>
