@@ -5,7 +5,7 @@ This file contains all the text content that appears on the site.
 
 # About section content
 ABOUT_CONTENT = {
-    'main_text': 'Formed in 2023, Inner Perception brings a fresh voice to the music scene. With their intense energy and unique blend of post-hardcore with melodic hardcore influences, Inner Perception create soundscapes that are both powerful and memorable. The band\'s music is characterized by dynamic arrangements and soulful melodies, resulting in tracks that leave a lasting impression on listeners.',
+    'main_text': 'Formed in 2023, Inner Perception bring a distinctive edge to the post-hardcore genre. Their songs feature shifting dynamics, textured instrumentation, and an underlying emotional pulse, creating a sound that’s both intense and enduring.',
     'band_members': 'The band consists of Martin (guitars,vocals), Honza (guitar), George (bass). Together, we create music that explores themes of personal growth, and the human experience.',
     'show_band_members': False  # Set to True to display band members info
 }
