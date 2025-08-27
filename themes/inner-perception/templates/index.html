@@ -2,6 +2,7 @@
 
 <!-- Hero Section -->
 {% block content %}
+{% if HERO.enabled %}
 <section id="hero" class="hero">
   <div class="video-background">
     <video autoplay loop muted playsinline>
@@ -16,6 +17,7 @@
     </div>
   </div>
 </section>
+{% endif %}
 
 <!-- YouTube Video -->
 {% if YOUTUBE.enabled and YOUTUBE.url %}
@@ -57,6 +59,7 @@
 </section>
 
 <!-- Music Section -->
+{% if MUSIC.enabled %}
 <section id="music" class="music">
   <div class="container">
     <div class="section-header">
@@ -110,6 +113,7 @@
 
   </div>
 </section>
+{% endif %}
 
 <!-- Live Shows Section -->
   <section id="live" class="shows">

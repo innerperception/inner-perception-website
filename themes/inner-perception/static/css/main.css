@@ -1,9 +1,9 @@
 /* Base Styles */
 :root {
-  --primary-color: #F1F0F2; /* Blue-gray color */
+  --primary-color: #F6F5F5; /* Blue-gray color */
   --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
-  --dark-bg: #000000; /* Black - From image palette */
-  --text-color: #F1F0F2; /* Light sepia tint instead of pure white */
+  --dark-bg: #3A3E3F; /* Black - From image palette */
+  --text-color: var(--primary-color); /* Light sepia tint instead of pure white */
   --link-color: #C46870; /* Lighter red-orange hover color */
   --hover-color: var(--link-color); /* Lighter red-orange hover color */
   --header-color: var(--primary-color); /* Blue-gray color for headings */
@@ -159,7 +159,7 @@ a:hover {
 }
 
 .site-header .social-links a:hover {
-  color: var(--primary-color);
+  color: var(--hover-color);
 }
 
 /* Navigation Area */

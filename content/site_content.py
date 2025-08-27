@@ -3,6 +3,11 @@ Site content configuration file for Inner Perception website.
 This file contains all the text content that appears on the site.
 """
 
+# Hero section content
+HERO_SECTION = {
+    'enabled': True,  # Set to False to hide the entire Hero section
+}
+
 # About section content
 ABOUT_CONTENT = {
     'main_text': 'Formed in 2023, Inner Perception bring a distinctive edge to the post-hardcore genre. Their songs feature shifting dynamics, textured instrumentation, and an underlying emotional pulse, creating a sound that’s both intense and enduring.',
@@ -31,6 +36,11 @@ CONTACT_CONTENT = {
     'booking_email': 'booking@inner-perception.com',
     'mailing_list_title': 'Subscribe to our mailing list',
     'social_intro': 'Follow us on social media:'
+}
+
+# Music section content
+MUSIC_SECTION = {
+    'enabled': False,  # Set to False to hide the entire Music section
 }
 
 # Albums content (currently commented out in the template)
