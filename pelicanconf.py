@@ -26,7 +26,7 @@ INSTAGRAM_USERNAME = 'inner_perception'
 # SPOTIFY_ARTIST_ID = 'innerperception'
 YOUTUBE_CHANNEL = 'https://www.youtube.com/@InnerPerceptionHC'
 BANDCAMP_URL = 'https://innerperception.bandcamp.com'
-FACEBOOK_USERNAME = 'https://www.facebook.com/profile.php?id=61557908352753'
+FACEBOOK_USERNAME = '61557908352753'
 
 # Import site content
 import sys
