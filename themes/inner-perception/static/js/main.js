@@ -3,6 +3,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   console.log('[Debug] DOMContentLoaded fired.'); // Log 1
 
+  // --- Theme Toggle Logic ---
+  initializeTheme();
+  setupThemeToggle();
+
   // Get the fixed header element
   const header = document.querySelector('.site-header');
   const heroSection = document.querySelector('#hero');
@@ -265,4 +269,38 @@ function scrollToTop() {
         top: 0,
         behavior: 'smooth'
     });
+}
+
+// --- Theme Toggle Functions ---
+function initializeTheme() {
+  // Check for saved theme preference or default to 'dark'
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  console.log(`[Theme] Initialized with theme: ${savedTheme}`);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  
+  console.log(`[Theme] Switched from ${currentTheme} to ${newTheme}`);
+  
+  // Add a subtle animation effect
+  document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+  setTimeout(() => {
+    document.body.style.transition = '';
+  }, 300);
+}
+
+function setupThemeToggle() {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+    console.log('[Theme] Theme toggle button initialized');
+  } else {
+    console.warn('[Theme] Theme toggle button not found');
+  }
 }
