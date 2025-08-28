@@ -25,12 +25,12 @@
 
 /* Light theme */
 [data-theme="light"] {
-  --primary-color: #2C3E50; /* Dark blue-gray for text */
+  --primary-color: #F0F4F2; /* Keep same as dark mode for consistency */
   --secondary-color: #F8F9FA; /* Light gray background */
   --dark-bg: #FFFFFF; /* White background */
   --text-color: #2C3E50; /* Dark text */
-  --link-color: #E74C3C; /* Red accent color */
-  --hover-color: #C0392B; /* Darker red for hover */
+  --link-color: #F16A1C; /* Keep same orange as dark mode */
+  --hover-color: #F16A1C; /* Keep same orange as dark mode */
   --header-color: #2C3E50; /* Dark headers */
   
   /* Light theme specific colors */
@@ -40,8 +40,8 @@
   --bg-card: rgba(255, 255, 255, 0.8);
   --border-color: rgba(0, 0, 0, 0.1);
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --header-bg: rgba(255, 255, 255, 0.9);
-  --header-bg-scrolled: rgba(255, 255, 255, 0.98);
+  --header-bg: #FFFFFF; /* Solid white header */
+  --header-bg-scrolled: #FFFFFF; /* Solid white when scrolled */
 }
 
 /* Import new Google Fonts */
@@ -450,6 +450,11 @@ section:last-of-type {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
 }
 
+/* Remove text shadows in light mode */
+[data-theme="light"] .about-text p {
+  text-shadow: none;
+}
+
 /* Music Section */
 .music {
   padding: 100px 0;
@@ -526,6 +531,11 @@ section:last-of-type {
   margin-right: auto;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
   font-size: 1.2rem; /* Added increased font size for better readability */
+}
+
+/* Remove text shadows in light mode */
+[data-theme="light"] .video-description {
+  text-shadow: none;
 }
 
 .video-container {
@@ -626,6 +636,11 @@ section:last-of-type {
   margin-bottom: 15px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
   font-size: 1.2rem; /* Added increased font size for better readability */
+}
+
+/* Remove text shadows in light mode */
+[data-theme="light"] .contact-info p {
+  text-shadow: none;
 }
 
 /* Live Shows Section */

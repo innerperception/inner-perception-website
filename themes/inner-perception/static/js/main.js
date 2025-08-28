@@ -276,6 +276,11 @@ function initializeTheme() {
   // Check for saved theme preference or default to 'dark'
   const savedTheme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', savedTheme);
+  
+  // Set initial logo and video based on theme
+  updateLogo(savedTheme);
+  updateHeroVideo(savedTheme);
+  
   console.log(`[Theme] Initialized with theme: ${savedTheme}`);
 }
 
@@ -288,11 +293,43 @@ function toggleTheme() {
   
   console.log(`[Theme] Switched from ${currentTheme} to ${newTheme}`);
   
+  // Update logo and video based on theme
+  updateLogo(newTheme);
+  updateHeroVideo(newTheme);
+  
   // Add a subtle animation effect
   document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
   setTimeout(() => {
     document.body.style.transition = '';
   }, 300);
+}
+
+function updateLogo(theme) {
+  const logo = document.querySelector('.site-logo');
+  if (logo) {
+    if (theme === 'light') {
+      logo.src = logo.src.replace('inner-perception-alpha.png', 'inner-perception-black.png');
+    } else {
+      logo.src = logo.src.replace('inner-perception-black.png', 'inner-perception-alpha.png');
+    }
+    console.log(`[Theme] Updated logo for ${theme} mode`);
+  }
+}
+
+function updateHeroVideo(theme) {
+  const heroVideo = document.querySelector('.video-background video source');
+  if (heroVideo) {
+    const currentSrc = heroVideo.src;
+    if (theme === 'light') {
+      heroVideo.src = currentSrc.replace('ip_moth_web.mp4', 'ip-moth-invert.mp4');
+    } else {
+      heroVideo.src = currentSrc.replace('ip-moth-invert.mp4', 'ip_moth_web.mp4');
+    }
+    // Reload the video with new source
+    const video = heroVideo.parentElement;
+    video.load();
+    console.log(`[Theme] Updated hero video for ${theme} mode`);
+  }
 }
 
 function setupThemeToggle() {
