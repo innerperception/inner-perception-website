@@ -953,6 +953,16 @@ section:last-of-type {
   display: none;
 }
 
+/* Ensure moon icon is black in light mode (when visible) */
+[data-theme="light"] .theme-toggle .moon-icon {
+  color: #000000;
+}
+
+/* Ensure sun icon is white in dark mode (when visible) */
+.theme-toggle .sun-icon {
+  color: #FFFFFF;
+}
+
 /* Footer */
 .site-footer {
   background-color: var(--bg-secondary);
