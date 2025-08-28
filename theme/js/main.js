@@ -3,6 +3,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   console.log('[Debug] DOMContentLoaded fired.'); // Log 1
 
+  // --- Theme Toggle Logic ---
+  initializeTheme();
+  setupThemeToggle();
+
   // Get the fixed header element
   const header = document.querySelector('.site-header');
   const heroSection = document.querySelector('#hero');
@@ -265,4 +269,89 @@ function scrollToTop() {
         top: 0,
         behavior: 'smooth'
     });
+}
+
+// --- Theme Toggle Functions ---
+function initializeTheme() {
+  // Check for saved theme preference or default to 'dark'
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  
+  // Set initial logo and video based on theme
+  updateLogo(savedTheme);
+  updateHeroVideo(savedTheme);
+  updateBrowserThemeColor(savedTheme);
+  
+  console.log(`[Theme] Initialized with theme: ${savedTheme}`);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  
+  console.log(`[Theme] Switched from ${currentTheme} to ${newTheme}`);
+  
+  // Update logo and video based on theme
+  updateLogo(newTheme);
+  updateHeroVideo(newTheme);
+  updateBrowserThemeColor(newTheme);
+  
+  // Add a subtle animation effect
+  document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+  setTimeout(() => {
+    document.body.style.transition = '';
+  }, 300);
+}
+
+function updateLogo(theme) {
+  const logo = document.querySelector('.site-logo');
+  if (logo) {
+    if (theme === 'light') {
+      logo.src = logo.src.replace('inner-perception-alpha.png', 'inner-perception-black.png');
+    } else {
+      logo.src = logo.src.replace('inner-perception-black.png', 'inner-perception-alpha.png');
+    }
+    console.log(`[Theme] Updated logo for ${theme} mode`);
+  }
+}
+
+function updateHeroVideo(theme) {
+  const heroVideo = document.querySelector('.video-background video source');
+  if (heroVideo) {
+    const currentSrc = heroVideo.src;
+    if (theme === 'light') {
+      heroVideo.src = currentSrc.replace('ip_moth_web.mp4', 'ip-moth-invert.mp4');
+    } else {
+      heroVideo.src = currentSrc.replace('ip-moth-invert.mp4', 'ip_moth_web.mp4');
+    }
+    // Reload the video with new source
+    const video = heroVideo.parentElement;
+    video.load();
+    console.log(`[Theme] Updated hero video for ${theme} mode`);
+  }
+}
+
+function updateBrowserThemeColor(theme) {
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  if (metaThemeColor) {
+    if (theme === 'light') {
+      metaThemeColor.setAttribute('content', '#FFFFFF');
+    } else {
+      metaThemeColor.setAttribute('content', '#000000');
+    }
+    console.log(`[Theme] Updated browser theme color for ${theme} mode`);
+  }
+}
+
+function setupThemeToggle() {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+    console.log('[Theme] Theme toggle button initialized');
+  } else {
+    console.warn('[Theme] Theme toggle button not found');
+  }
 }

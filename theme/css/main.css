@@ -1,5 +1,6 @@
 /* Base Styles */
 :root {
+  /* Dark theme (default) */
   --primary-color: #F0F4F2; /* Blue-gray color */
   --secondary-color: #010101; /* Bistre - From image palette (darker than Bistre-2) */
   --dark-bg: #000000; /* Black - From image palette */
@@ -10,6 +11,37 @@
   --header-font: 'Playfair Display', serif; /* Elegant serif font for headings */
   --body-font: 'Lora', serif; /* Readable serif font for body text */
   --border-radius: 4px;
+  
+  /* Theme-specific colors */
+  --bg-primary: var(--dark-bg);
+  --bg-secondary: var(--secondary-color);
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-card: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --header-bg: rgba(0, 0, 0, 0.3);
+  --header-bg-scrolled: rgba(0, 0, 0, 0.95);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --primary-color: #F0F4F2; /* Keep same as dark mode for consistency */
+  --secondary-color: #F8F9FA; /* Light gray background */
+  --dark-bg: #FFFFFF; /* White background */
+  --text-color: #2C3E50; /* Dark text */
+  --link-color: #F16A1C; /* Keep same orange as dark mode */
+  --hover-color: #F16A1C; /* Keep same orange as dark mode */
+  --header-color: #2C3E50; /* Dark headers */
+  
+  /* Light theme specific colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-overlay: rgba(255, 255, 255, 0.9);
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --header-bg: #FFFFFF; /* Solid white header */
+  --header-bg-scrolled: #FFFFFF; /* Solid white when scrolled */
 }
 
 /* Import new Google Fonts */
@@ -27,11 +59,12 @@ html {
 
 body {
   font-family: var(--body-font);
-  background-color: var(--dark-bg);
+  background-color: var(--bg-primary);
   color: var(--text-color);
   line-height: 1.7; /* Increase slightly for readability */
   font-size: 16px;
   text-align: center; /* Center align everything */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -101,8 +134,8 @@ a:hover {
   width: 100%;
   height: auto; /* Auto height based on content */
   padding: 32px 0; /* Increased padding by 2px */
-  background-color: rgba(0, 0, 0, 0.3); /* More transparent initially */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--header-bg); /* More transparent initially */
+  box-shadow: 0 2px 10px var(--shadow-color);
   z-index: 1000;
   transition: padding 0.3s ease, background-color 0.3s ease; /* Add transition */
 }
@@ -110,8 +143,8 @@ a:hover {
 /* Styles for when the header is scrolled */
 .header-scrolled {
   padding: 27px 0; /* Increased scrolled padding by 2px */
-  background-color: rgba(0, 0, 0, 0.95); /* More solid when scrolled */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background-color: var(--header-bg-scrolled); /* More solid when scrolled */
+  box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 .site-header .container {
@@ -209,6 +242,11 @@ a:hover {
   color: var(--primary-color); /* Navigation links hover in subtle orange */
 }
 
+/* Light mode: no color change on nav hover, only underline */
+[data-theme="light"] .site-nav ul li a:hover {
+  color: var(--text-color); /* Keep same text color */
+}
+
 /* Hero/Splash Screen */
 .hero {
   position: relative;
@@ -299,8 +337,9 @@ a:hover {
 /* Section Styling */
 section {
   padding: 80px 0; /* Consistent section padding */
-  background-color: var(--secondary-color);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color); /* Subtle separator */
+  transition: background-color 0.3s ease;
 }
 
 section:last-of-type {
@@ -340,7 +379,7 @@ section:last-of-type {
   padding: 100px 0;
   position: relative;
   color: var(--text-color);
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+  background-color: var(--bg-overlay); /* Overlay for readability */
 }
 
 /* About section background */
@@ -416,12 +455,17 @@ section:last-of-type {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
 }
 
+/* Remove text shadows in light mode */
+[data-theme="light"] .about-text p {
+  text-shadow: none;
+}
+
 /* Music Section */
 .music {
   padding: 100px 0;
   position: relative;
   color: var(--text-color);
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+  background-color: var(--bg-overlay); /* Overlay for readability */
 }
 
 /* Music section background */
@@ -448,10 +492,11 @@ section:last-of-type {
 .music-player-wrapper {
   position: relative;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--bg-card);
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: background-color 0.3s ease;
 }
 
 /* Video Section */
@@ -459,7 +504,7 @@ section:last-of-type {
   padding: 80px 0;
   position: relative;
   color: var(--text-color);
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+  background-color: var(--bg-overlay); /* Overlay for readability */
 }
 
 /* Video section background */
@@ -493,6 +538,11 @@ section:last-of-type {
   font-size: 1.2rem; /* Added increased font size for better readability */
 }
 
+/* Remove text shadows in light mode */
+[data-theme="light"] .video-description {
+  text-shadow: none;
+}
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -523,6 +573,14 @@ section:last-of-type {
   position: relative;
 }
 
+/* Light mode background for live shows */
+[data-theme="light"] .shows {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../images/backgrounds/live-bg-inverted.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* Live shows section background */
 .shows::before {
   content: '';
@@ -549,10 +607,10 @@ section:last-of-type {
   justify-content: space-between;
   margin-bottom: 20px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--bg-card);
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Contact Section */
@@ -561,7 +619,7 @@ section:last-of-type {
   padding: 80px 0;
   position: relative;
   color: var(--text-color);
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+  background-color: var(--bg-overlay); /* Overlay for readability */
 }
 
 /* Contact section background */
@@ -591,6 +649,21 @@ section:last-of-type {
   margin-bottom: 15px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
   font-size: 1.2rem; /* Added increased font size for better readability */
+}
+
+/* Remove text shadows in light mode */
+[data-theme="light"] .contact-info p {
+  text-shadow: none;
+}
+
+/* Email link in light mode uses primary color */
+[data-theme="light"] .contact-info a[href^="mailto:"] {
+  color: #000000;
+}
+
+[data-theme="light"] .contact-info a[href^="mailto:"]:hover {
+  color: var(--text-color);
+  text-decoration: underline;
 }
 
 /* Live Shows Section */
@@ -738,8 +811,9 @@ section:last-of-type {
 .mailing-list {
   margin: 30px 0;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-card);
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .mailing-list h3 {
@@ -760,11 +834,12 @@ section:last-of-type {
 .subscribe-form input[type="email"] {
   flex: 1;
   padding: 12px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
   color: var(--text-color);
   border-radius: var(--border-radius);
   font-size: 1.1rem; /* Increased from default size to match button */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .subscribe-form button {
@@ -844,13 +919,102 @@ section:last-of-type {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Button in light mode uses link color */
+[data-theme="light"] .btn {
+  background-color: var(--link-color);
+  color: #FFFFFF;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle .icon {
+  transition: transform 0.3s ease;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+  display: none;
+}
+
+/* Hide moon icon in dark mode and by default */
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: none !important;
+}
+
+/* Default state - hide moon icon */
+.theme-toggle .moon-icon {
+  display: none;
+}
+
+/* Show moon icon only in light mode */
+[data-theme="light"] .theme-toggle .moon-icon {
+  display: inline-block !important;
+}
+
+/* Theme toggle icon styling */
+.theme-toggle .icon {
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+/* Light mode theme toggle button */
+[data-theme="light"] .theme-toggle {
+  /* background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2); */
+  color: #000000 !important;
+}
+
+.moon-icon .icon {
+  color: #000000;
+}
+/* Red moon icon in light mode */
+[data-theme="light"] .theme-toggle .moon-icon {
+  color: #FF0000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Dark mode theme toggle button */
+[data-theme="dark"] .theme-toggle,
+:root .theme-toggle {
+  color: #FFFFFF;
+}
+
 /* Footer */
 .site-footer {
-  background-color: var(--secondary-color);
+  background-color: var(--bg-secondary);
   padding: 30px 0; /* Reduced padding */
   text-align: center;
   margin-top: 50px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
 }
 
 .site-footer p {
@@ -1151,11 +1315,12 @@ section:last-of-type {
 .music-player-wrapper {
   max-width: 700px; /* Or adjust as needed */
   margin: 40px auto 0; /* Center the wrapper */
-  background-color: rgba(0,0,0, 0.1); /* Slightly darker background to group */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--bg-card); /* Slightly darker background to group */
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Container for the player itself if extra spacing is needed */
@@ -1197,9 +1362,9 @@ section:last-of-type {
   display: block;
   width: 100%;
   padding: 12px 15px;
-  background-color: var(--secondary-color); /* Match section background */
+  background-color: var(--bg-secondary); /* Match section background */
   color: var(--text-color);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius); /* Use existing border radius */
   text-align: left;
   font-family: var(--body-font);
@@ -1209,8 +1374,8 @@ section:last-of-type {
 }
 
 .playlist-item button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--bg-card);
+  border-color: var(--primary-color);
 }
 
 /* Style for the currently active/playing track */
