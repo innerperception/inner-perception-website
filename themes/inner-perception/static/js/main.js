@@ -280,6 +280,7 @@ function initializeTheme() {
   // Set initial logo and video based on theme
   updateLogo(savedTheme);
   updateHeroVideo(savedTheme);
+  updateBrowserThemeColor(savedTheme);
   
   console.log(`[Theme] Initialized with theme: ${savedTheme}`);
 }
@@ -296,6 +297,7 @@ function toggleTheme() {
   // Update logo and video based on theme
   updateLogo(newTheme);
   updateHeroVideo(newTheme);
+  updateBrowserThemeColor(newTheme);
   
   // Add a subtle animation effect
   document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
@@ -329,6 +331,18 @@ function updateHeroVideo(theme) {
     const video = heroVideo.parentElement;
     video.load();
     console.log(`[Theme] Updated hero video for ${theme} mode`);
+  }
+}
+
+function updateBrowserThemeColor(theme) {
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  if (metaThemeColor) {
+    if (theme === 'light') {
+      metaThemeColor.setAttribute('content', '#FFFFFF');
+    } else {
+      metaThemeColor.setAttribute('content', '#000000');
+    }
+    console.log(`[Theme] Updated browser theme color for ${theme} mode`);
   }
 }
 
