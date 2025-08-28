@@ -242,6 +242,11 @@ a:hover {
   color: var(--primary-color); /* Navigation links hover in subtle orange */
 }
 
+/* Light mode: no color change on nav hover, only underline */
+[data-theme="light"] .site-nav ul li a:hover {
+  color: var(--text-color); /* Keep same text color */
+}
+
 /* Hero/Splash Screen */
 .hero {
   position: relative;
