@@ -568,6 +568,14 @@ section:last-of-type {
   position: relative;
 }
 
+/* Light mode background for live shows */
+[data-theme="light"] .shows {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../images/backgrounds/live-bg-inverted.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* Live shows section background */
 .shows::before {
   content: '';
