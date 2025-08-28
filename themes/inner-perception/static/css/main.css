@@ -656,6 +656,16 @@ section:last-of-type {
   text-shadow: none;
 }
 
+/* Email link in light mode uses primary color */
+[data-theme="light"] .contact-info a[href^="mailto:"] {
+  color: #000000;
+}
+
+[data-theme="light"] .contact-info a[href^="mailto:"]:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
 /* Live Shows Section */
 #shows ul {
   list-style: none;
