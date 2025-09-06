@@ -782,12 +782,28 @@ section:last-of-type {
 
 .contact-info a {
   color: var(--primary-color);
+  text-decoration: none;
+  position: relative;
   transition: color 0.3s ease;
+}
+
+.contact-info a:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-color);
+  transition: width 0.3s ease;
 }
 
 .contact-info a:hover {
   color: var(--text-color);
-  text-decoration: underline;
+}
+
+.contact-info a:hover:after {
+  width: 100%;
 }
 
 .contact-info .social-links {
@@ -898,25 +914,38 @@ section:last-of-type {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 12px 25px;
-  background-color: var(--primary-color);
-  color: var(--dark-bg);
-  border: none;
+  padding: 8px 16px;
+  background-color: var(--link-color);
+  color: var(--primary-color);
+  text-decoration: none;
   border-radius: var(--border-radius);
-  font-family: var(--header-font);
   font-weight: 600;
-  font-size: 1rem;
-  text-transform: none; /* Remove uppercase for serif fonts */
-  letter-spacing: 0.5px; /* Reduced letter spacing for serif fonts */
+  text-align: center;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-color);
+  transition: width 0.3s ease;
 }
 
 .btn:hover {
-  background-color: var(--link-color); /* Lighter red-orange hover color */
-  color: var(--text-color);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.btn:hover:after {
+  width: 100%;
 }
 
 /* Button in light mode uses link color */
@@ -996,7 +1025,6 @@ section:last-of-type {
 }
 /* Red moon icon in light mode */
 [data-theme="light"] .theme-toggle .moon-icon {
-  color: #FF0000 !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
@@ -1555,14 +1583,28 @@ section:last-of-type {
   color: var(--link-color);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.pre-order-info a:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-color);
+  transition: width 0.3s ease;
 }
 
 .pre-order-info a:hover {
   color: var(--hover-color);
-  border-bottom-color: var(--link-color);
   transform: translateY(-1px);
+}
+
+.pre-order-info a:hover:after {
+  width: 100%;
 }
 
 /* --- End Plyr Styles --- */
