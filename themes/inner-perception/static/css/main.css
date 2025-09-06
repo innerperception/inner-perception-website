@@ -374,12 +374,13 @@ section:last-of-type {
   background-color: var(--hover-color);
 }
 
-/* About Section Layout */
+/* About Section */
 .about {
   padding: 100px 0;
   position: relative;
   color: var(--text-color);
   background-color: var(--bg-overlay); /* Overlay for readability */
+  scroll-margin-top: 80px; /* Offset for fixed header */
 }
 
 /* About section background */
