@@ -54,7 +54,7 @@ COMING_SOON_SECTION = {
     'title': 'Coming Soon',
     'album_title': 'Voyage',
     'release_date': 'September 17, 2025',
-    'description': 'Our debut album takes listeners on an emotional journey across twelve powerful tracks that showcase our unique sound.',
+    'description': 'Our debut album takes listeners on an emotional journey across twelve powerful songs that showcase our unique sound.',
     'album_cover': 'voyage-cover-front.jpg'
 }
 
