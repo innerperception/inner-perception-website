@@ -374,12 +374,13 @@ section:last-of-type {
   background-color: var(--hover-color);
 }
 
-/* About Section Layout */
+/* About Section */
 .about {
   padding: 100px 0;
   position: relative;
   color: var(--text-color);
   background-color: var(--bg-overlay); /* Overlay for readability */
+  scroll-margin-top: 80px; /* Offset for fixed header */
 }
 
 /* About section background */
@@ -466,6 +467,7 @@ section:last-of-type {
   position: relative;
   color: var(--text-color);
   background-color: var(--bg-overlay); /* Overlay for readability */
+  scroll-margin-top: 80px; /* Offset for fixed header */
 }
 
 /* Music section background */
@@ -571,6 +573,7 @@ section:last-of-type {
   padding: 100px 0;
   color: var(--text-color);
   position: relative;
+  scroll-margin-top: 80px; /* Offset for fixed header */
 }
 
 /* Light mode background for live shows */
@@ -620,6 +623,7 @@ section:last-of-type {
   position: relative;
   color: var(--text-color);
   background-color: var(--bg-overlay); /* Overlay for readability */
+  scroll-margin-top: 80px; /* Offset for fixed header */
 }
 
 /* Contact section background */
@@ -1512,6 +1516,7 @@ section:last-of-type {
   position: relative;
   color: var(--text-color);
   background-color: var(--bg-primary);
+  scroll-margin-top: 80px; /* Offset for fixed header */
 }
 
 .coming-soon-content {
