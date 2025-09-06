@@ -1551,6 +1551,20 @@ section:last-of-type {
   opacity: 0.9;
 }
 
+.pre-order-info a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.pre-order-info a:hover {
+  color: var(--hover-color);
+  border-bottom-color: var(--link-color);
+  transform: translateY(-1px);
+}
+
 /* --- End Plyr Styles --- */
 
 /* Additional Show Styles */

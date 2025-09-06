@@ -54,7 +54,7 @@ COMING_SOON_SECTION = {
     'title': 'Coming Soon',
     'album_title': 'Voyage',
     'release_date': 'September 17, 2025',
-    'description': 'Our debut EP explores the depths of human emotion through five powerful tracks that showcase our unique sound and technical abilities.',
+    'description': 'Our debut album takes listeners on an emotional journey across twelve powerful tracks that showcase our unique sound.',
     'album_cover': 'voyage-cover-front.jpg'
 }
 
