@@ -914,24 +914,38 @@ section:last-of-type {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 8px 16px;
   background-color: var(--link-color);
-  color: var(--text-color);
+  color: var(--primary-color);
   text-decoration: none;
   border-radius: var(--border-radius);
   font-weight: 600;
   text-align: center;
-  border: 2px solid var(--link-color);
+  border: none;
   cursor: pointer;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-color);
+  transition: width 0.3s ease;
 }
 
 .btn:hover {
-  background-color: var(--hover-color);
-  color: var(--text-color);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.btn:hover:after {
+  width: 100%;
 }
 
 /* Button in light mode uses link color */
@@ -1011,7 +1025,6 @@ section:last-of-type {
 }
 /* Red moon icon in light mode */
 [data-theme="light"] .theme-toggle .moon-icon {
-  color: #FF0000 !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
