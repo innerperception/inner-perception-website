@@ -169,6 +169,12 @@ document.addEventListener('DOMContentLoaded', function() {
       playlistItems.forEach(i => i.classList.remove('active'));
       if (item) {
           item.classList.add('active');
+          // Update track title in album info
+          const trackTitle = item.querySelector('button').textContent;
+          const titleElement = document.getElementById('current-track-title');
+          if (titleElement) {
+            titleElement.textContent = trackTitle;
+          }
       }
     }
 
