@@ -45,7 +45,17 @@ CONTACT_CONTENT = {
 
 # Music section content
 MUSIC_SECTION = {
-    'enabled': True,  # Set to False to hide the entire Music section
+    'enabled': False,  # Set to False to hide the entire Music section
+}
+
+# Coming Soon section content
+COMING_SOON_SECTION = {
+    'enabled': True,  # Set to False to hide the entire Coming Soon section
+    'title': 'Coming Soon',
+    'album_title': 'Voyage',
+    'release_date': 'September 17, 2025',
+    'description': 'Our debut EP explores the depths of human emotion through five powerful tracks that showcase our unique sound and technical abilities.',
+    'album_cover': 'voyage-cover-front.jpg'
 }
 
 # Albums content (currently commented out in the template)

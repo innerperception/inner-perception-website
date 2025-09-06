@@ -1161,6 +1161,26 @@ section:last-of-type {
     padding: 10px;
   }
   
+  /* Coming Soon section */
+  .coming-soon-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .coming-soon-cover {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .album-announcement .album-title {
+    font-size: 2rem;
+  }
+  
+  .album-announcement .release-date {
+    font-size: 1.1rem;
+  }
+  
   /* Shows section */
   .show-item {
     flex-direction: column;
@@ -1456,6 +1476,79 @@ section:last-of-type {
   --plyr-audio-controls-background: transparent; /* Cleaner look */
   --plyr-audio-control-color: var(--text-color);
   --plyr-audio-control-color-hover: var(--primary-color);
+}
+
+/* --- Coming Soon Section --- */
+.coming-soon {
+  padding: 100px 0;
+  position: relative;
+  color: var(--text-color);
+  background-color: var(--bg-primary);
+}
+
+.coming-soon-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.album-artwork {
+  flex-shrink: 0;
+}
+
+.coming-soon-cover {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.coming-soon-cover:hover {
+  transform: scale(1.02);
+}
+
+.album-announcement {
+  flex: 1;
+}
+
+.album-announcement .album-title {
+  color: var(--header-color);
+  font-family: var(--header-font);
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+
+.album-announcement .release-date {
+  color: var(--link-color);
+  font-size: 1.3rem;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+.album-announcement .album-description {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+}
+
+.pre-order-info {
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--link-color);
+}
+
+.pre-order-info p {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-color);
+  opacity: 0.9;
 }
 
 /* --- End Plyr Styles --- */

@@ -32,7 +32,7 @@ FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61557908352753'
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'content')))
-from site_content import HERO_SECTION, ABOUT_CONTENT, LIVE_SHOWS, CONTACT_CONTENT, MUSIC_SECTION, ALBUMS, YOUTUBE_VIDEO
+from site_content import HERO_SECTION, ABOUT_CONTENT, LIVE_SHOWS, CONTACT_CONTENT, MUSIC_SECTION, COMING_SOON_SECTION, ALBUMS, YOUTUBE_VIDEO
 
 # Make site content available to templates
 HERO = HERO_SECTION
@@ -40,6 +40,7 @@ ABOUT = ABOUT_CONTENT
 SHOWS = LIVE_SHOWS
 CONTACT = CONTACT_CONTENT
 MUSIC = MUSIC_SECTION
+COMING_SOON = COMING_SOON_SECTION
 ALBUMS_DATA = ALBUMS
 YOUTUBE = YOUTUBE_VIDEO
 

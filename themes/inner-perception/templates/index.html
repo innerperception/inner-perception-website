@@ -127,6 +127,32 @@
 </section>
 {% endif %}
 
+<!-- Coming Soon Section -->
+{% if COMING_SOON.enabled %}
+<section id="coming-soon" class="coming-soon">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ COMING_SOON.title }}</h2>
+    </div>
+    
+    <div class="coming-soon-content">
+      <div class="album-artwork">
+        <img src="{{ SITEURL }}/theme/images/{{ COMING_SOON.album_cover }}" alt="{{ COMING_SOON.album_title }} Cover" class="coming-soon-cover">
+      </div>
+      
+      <div class="album-announcement">
+        <h3 class="album-title">{{ COMING_SOON.album_title }}</h3>
+        <p class="release-date">Release Date: <strong>{{ COMING_SOON.release_date }}</strong></p>
+        <p class="album-description">{{ COMING_SOON.description }}</p>
+        <div class="pre-order-info">
+          <p><a href="#contact">Join our mailing list</a> for early access to pre-orders and exclusive sneak previews.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <!-- Live Shows Section -->
   <section id="live" class="shows">
   <div class="container">
