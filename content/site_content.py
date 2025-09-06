@@ -45,7 +45,7 @@ CONTACT_CONTENT = {
 
 # Music section content
 MUSIC_SECTION = {
-    'enabled': False,  # Set to False to hide the entire Music section
+    'enabled': True,  # Set to False to hide the entire Music section
 }
 
 # Albums content (currently commented out in the template)

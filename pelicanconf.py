@@ -44,11 +44,10 @@ ALBUMS_DATA = ALBUMS
 YOUTUBE = YOUTUBE_VIDEO
 
 # Music files
-# MUSIC_FILES = ['01_Mindscapes.mp3', '02_Forever.mp3', '03_Set_Me_Free.mp3']
-MUSIC_FILES = []
+MUSIC_FILES = ['01_Mindscapes.mp3', '02_Forever.mp3', '03_Set_Me_Free.mp3']
 
 # Static files
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/CNAME']
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/CNAME', 'music']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/CNAME': {'path': 'CNAME'},

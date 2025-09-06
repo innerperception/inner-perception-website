@@ -68,24 +68,36 @@
 
     <!-- Wrapper for Player and Playlist -->
     <div class="music-player-wrapper">
-
-      <!-- Plyr Player -->
-      <div class="plyr-container">
-        <audio id="player" controls crossorigin playsinline>
-          <!-- Initial source will be set by JS, or you can set a default -->
-          <!-- <source src="{{ SITEURL }}/theme/music/01_Mindscapes.mp3" type="audio/mp3" /> -->
-        </audio>
+      
+      <!-- Album Cover -->
+      <div class="album-cover-container">
+        <img id="current-album-cover" src="{{ SITEURL }}/theme/images/voyage-cover-front.jpg" alt="Album Cover" class="album-cover">
+        <div class="album-info">
+          <h3 id="current-track-title">Select a track</h3>
+          <p id="current-artist">Inner Perception</p>
+        </div>
       </div>
 
-      <!-- Playlist -->
-      <div class="playlist-container">
-        <ul id="playlist" class="playlist">
-          {% for file in MUSIC_FILES %}
-            <li class="playlist-item" data-track-src="{{ SITEURL }}/theme/music/{{ file }}">
-              <button type="button">{{ file|replace('.mp3', '')|replace('_', ' ') }}</button>
-            </li>
-          {% endfor %}
-        </ul>
+      <!-- Player and Playlist Container -->
+      <div class="player-playlist-container">
+        <!-- Plyr Player -->
+        <div class="plyr-container">
+          <audio id="player" controls crossorigin playsinline>
+            <!-- Initial source will be set by JS, or you can set a default -->
+            <!-- <source src="{{ SITEURL }}/theme/music/01_Mindscapes.mp3" type="audio/mp3" /> -->
+          </audio>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist-container">
+          <ul id="playlist" class="playlist">
+            {% for file in MUSIC_FILES %}
+              <li class="playlist-item" data-track-src="{{ SITEURL }}/theme/music/{{ file }}">
+                <button type="button">{{ file|replace('.mp3', '')|replace('_', ' ') }}</button>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
 
     </div> <!-- End music-player-wrapper -->
