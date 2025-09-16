@@ -10,9 +10,9 @@ HERO_SECTION = {
 
 # About section content
 ABOUT_CONTENT = {
-    'main_text': 'Formed in 2023, Inner Perception bring a distinctive edge to the post-hardcore genre. Their songs feature shifting dynamics, textured instrumentation, and an underlying emotional pulse, creating a sound that’s both intense and enduring.',
-    'band_members': 'The band consists of Martin (guitars,vocals), Honza (guitar), George (bass). Together, we create music that explores themes of personal growth, and the human experience.',
-    'show_band_members': False  # Set to True to display band members info
+    'main_text': 'Formed in 2023 by Martin and Georgi as a studio side project, Inner Perception has since evolved into a full live band, bringing a distinctive edge to the post-hardcore genre. Our songs feature shifting dynamics, textured instrumentation, and an underlying emotional pulse, creating a sound that’s both raw and intense but also melodic and emotional.',
+    'band_members': 'The band currently consists of Ole (vocals), Martin (guitars,vocals), Honza (guitars), Georgi (bass) and Luca (drums).',
+    'show_band_members': True  # Set to True to display band members info
 }
 
 # Live shows content
