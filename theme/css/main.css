@@ -1510,6 +1510,50 @@ section:last-of-type {
   --plyr-audio-control-color-hover: var(--primary-color);
 }
 
+/* --- Bandcamp Player Styles --- */
+.bandcamp-player-wrapper {
+  max-width: 760px; /* accommodate 700px iframe width with padding */
+  margin: 40px auto 0;
+  background-color: var(--bg-card);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 24px var(--shadow-color);
+  position: relative;
+  z-index: 1;
+}
+
+.bandcamp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bandcamp-container iframe {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design for Bandcamp player */
+@media (max-width: 768px) {
+  .bandcamp-player-wrapper {
+    padding: 20px;
+    margin: 20px auto 0;
+  }
+  
+  .bandcamp-container iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 350px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .bandcamp-container iframe {
+    height: 300px !important;
+  }
+}
+
 /* --- Coming Soon Section --- */
 .coming-soon {
   padding: 100px 0;
