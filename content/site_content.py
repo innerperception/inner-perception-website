@@ -45,12 +45,12 @@ CONTACT_CONTENT = {
 
 # Music section content
 MUSIC_SECTION = {
-    'enabled': False,  # Set to False to hide the entire Music section
+    'enabled': True,  # Set to False to hide the entire Music section
 }
 
 # Coming Soon section content
 COMING_SOON_SECTION = {
-    'enabled': True,  # Set to False to hide the entire Coming Soon section
+    'enabled': False,  # Set to False to hide the entire Coming Soon section
     'title': 'Coming Soon',
     'album_title': 'Voyage',
     'release_date': 'September 17, 2025',
